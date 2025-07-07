@@ -1,0 +1,7 @@
+#---------------------------------------------------
+#General Parameters 
+#---------------------------------------------------
+ALL: "neurog2"
+SAMPLES: "samples.tsv"
+ANNOFILE: "annotations.txt"
+
