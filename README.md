@@ -33,7 +33,6 @@ Violin plots displaying quality control metrics such as number of genes detected
 
 ### 3. Additional Analysis Figure
 ![After Filtering QC metrics](figures/violin_AfterQC.png)  
-*(Replace this caption with the actual description of your third figure)*
 
 ## Filtering Criteria
 
