@@ -4,4 +4,4 @@
 ALL: "neurog2"
 SAMPLES: "samples.tsv"
 ANNOFILE: "annotations.txt"
-
+MARKERS: "markers.txt"

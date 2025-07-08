@@ -6,7 +6,7 @@ rule all:
          input:
             expand("{all}.h5ad", all= config['ALL']), 
             expand("analysed_{all}.h5ad", all=config['ALL']),
-            #expand("clustered_{all}.h5ad", all=config['ALL']), 
+	    expand("clustered_analysed_{all}.h5ad", all=config['ALL'])
  
 rule preprocess: 
         input:  
@@ -34,12 +34,14 @@ rule analyse:
 
 rule cluster: 
        input:
-          expand("corrected_{all}.h5ad", all=config['ALL']) 
+          expand("analysed_{all}.h5ad", all=config['ALL']) 
+       params: 
+          markers = config['MARKERS']  
        output:
-          expand("clustered_{all}.h5ad", all=config['ALL'])
+          expand("clustered_analysed_{all}.h5ad", all=config['ALL'])
        shell:
           """
-          python cluster.py {input}
+          python cluster.py {input} {params} 
           """
 
 rule annotate:

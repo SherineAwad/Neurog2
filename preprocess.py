@@ -54,7 +54,7 @@ def main():
 
     combined_adata = combined_adata[
       (combined_adata.obs['n_genes_by_counts'] > 800) &
-      (combined_adata.obs['n_genes_by_counts'] < 6000) &
+      (combined_adata.obs['n_genes_by_counts'] < 8000) &
       (combined_adata.obs['total_counts'] > 1200) &
       (combined_adata.obs['total_counts'] < 30000) &
       (combined_adata.obs['pct_counts_mt'] < 25), :
