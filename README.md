@@ -38,7 +38,7 @@ Violin plots displaying quality control metrics such as number of genes detected
 
 Quality filtering was applied to remove low-quality cells and potential doublets. Cells were retained only if they met all the following criteria:
 
-- Number of genes detected per cell between **800 and 6000**
+- Number of genes detected per cell between **800 and 8000**
 - Total counts per cell between **1200 and 30000**
 - Percentage of mitochondrial gene counts less than **25%**
 
