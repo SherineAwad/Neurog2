@@ -27,6 +27,13 @@ The analysis was performed using [Scanpy](https://scanpy.readthedocs.io/en/stabl
 ![UMAP of Neurog2 samples](figures/umap_neurog2.png)  
 UMAP plot colored by sample, showing clustering and distribution of single cells from different conditions.
 
+
+## Per sample UMAP 
+
+![UMAP of Control 2mo](figures/umap_sample_control_2mo.png)
+![UMAP of Neurog2_9SA_2mo](figure to file figures/umap_sample_Neurog2_9SA_2mo.png)
+![UMAP of Neurog2_9SA_5weeks](figures/umap_sample_Neurog2_9SA_5weeks.png)
+
 ### 2. Quality Control Violin Plot
 ![Before Filtering QC metrics](figures/violin_QC.png)  
 Violin plots displaying quality control metrics such as number of genes detected per cell, total counts, and percentage of mitochondrial gene expression.
@@ -44,9 +51,9 @@ Quality filtering was applied to remove low-quality cells and potential doublets
 
 This filtering step ensures removal of dead or dying cells and technical artifacts to improve downstream analysis quality.
 
-## Clustering 
+### 4. Clustering 
 
-#### Marker Gene UMAP Plots
+## Marker Gene UMAP Plots
 Below are the UMAP visualizations of marker gene expression across clusters. These are auto-generated from your data and saved in the figures/ directory.
 
 
@@ -76,11 +83,15 @@ Below are the UMAP visualizations of marker gene expression across clusters. The
 
 
 
-#### QC per Clsuter 
+## QC per Clsuter 
 
 <img src="figures/qc_violin_by_cluster.png" width="550"/>
 
-## Removing low quality clustering and Reclustering 
+### 5. Removing low quality clustering and Reclustering 
+
+We removed low quality clusters number:  ['7', '8', '11', '20', '28', '33', '34']
+
+then we reclustered and replot the marker genes as below: 
 
 
 
