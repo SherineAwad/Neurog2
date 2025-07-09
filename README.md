@@ -49,7 +49,7 @@ Below are the UMAP visualizations of marker gene expression across clusters. The
 
 #### QC per Clsuter 
 
-<img src="figures/qc_violin_by_cluster.png" width="350"/>
+<img src="figures/qc_violin_by_cluster.png" width="550"/>
 
 
 ![UMAP CLUSTERS](figures/umap_clusters.png)
