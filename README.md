@@ -44,15 +44,16 @@ Quality filtering was applied to remove low-quality cells and potential doublets
 
 This filtering step ensures removal of dead or dying cells and technical artifacts to improve downstream analysis quality.
 
-## Marker Gene UMAP Plots
+## Clustering 
+
+#### Marker Gene UMAP Plots
 Below are the UMAP visualizations of marker gene expression across clusters. These are auto-generated from your data and saved in the figures/ directory.
-
-#### QC per Clsuter 
-
-<img src="figures/qc_violin_by_cluster.png" width="550"/>
 
 
 ![UMAP CLUSTERS](figures/umap_clusters.png)
+
+<img src="figures/umapclustered_analysed_neurog2_Malat1.png" alt="Plot 1" width="33%"> <img src="figures/umapclustered_analysed_neurog2_mt-Atp6.png" alt="Plot 2" width="33%"> <img src="figures/umapclustered_analysed_neurog2_Sox9.png" alt="Plot 3" width="33%">
+
 
 <div style="text-align: left;">
 
@@ -168,6 +169,12 @@ Below are the UMAP visualizations of marker gene expression across clusters. The
 
 </div>
 
+
+#### QC per Clsuter 
+
+<img src="figures/qc_violin_by_cluster.png" width="550"/>
+
+## Removing low quality clustering and Reclustering 
 
 
 
