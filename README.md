@@ -30,9 +30,9 @@ UMAP plot colored by sample, showing clustering and distribution of single cells
 
 ## Per sample UMAP 
 
-![UMAP of Control 2mo](figures/umap_sample_control_2mo.png)
-![UMAP of Neurog2_9SA_2mo](figure to file figures/umap_sample_Neurog2_9SA_2mo.png)
-![UMAP of Neurog2_9SA_5weeks](figures/umap_sample_Neurog2_9SA_5weeks.png)
+![Control 2mo](figures/umap_sample_control_2mo.png)
+![Neurog2_9SA_2mo](figure to file figures/umap_sample_Neurog2_9SA_2mo.png)
+![Neurog2_9SA_5weeks](figures/umap_sample_Neurog2_9SA_5weeks.png)
 
 ### 2. Quality Control Violin Plot
 ![Before Filtering QC metrics](figures/violin_QC.png)  
