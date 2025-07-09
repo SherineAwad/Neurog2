@@ -47,6 +47,11 @@ This filtering step ensures removal of dead or dying cells and technical artifac
 ## Marker Gene UMAP Plots
 Below are the UMAP visualizations of marker gene expression across clusters. These are auto-generated from your data and saved in the figures/ directory.
 
+#### QC per Clsuter 
+
+<img src="figures/qc_violin_by_cluster.png" width="250"/>
+
+
 ![UMAP CLUSTERS](figures/umap_clusters.png)
 
 <div align="left">
