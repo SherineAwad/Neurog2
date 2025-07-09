@@ -98,20 +98,19 @@ Below are the UMAP visualizations of marker gene expression across clusters. The
   <div style="display: inline-block; width: 32%;"><img src="figures/umap_analysed_neurog2_Slc17a7.png" width="100%"/></div>
   <div style="display: inline-block; width: 32%;"><img src="figures/umap_analysed_neurog2_Lhx4.png" width="100%"/></div>
 
-  <!-- Newly generated plots -->
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Ccr2_featureplot.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Pax2_featureplot.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Rpe65_featureplot.png" width="100%"/></div>
+  <div style="display: inline-block; width: 32%;"><img src="figures/umap_analysed_neurog2_Ccr2_featureplot.png" width="100%"/></div>
+  <div style="display: inline-block; width: 32%;"><img src="figures/umap_analysed_neurog2_Pax2_featureplot.png" width="100%"/></div>
+  <div style="display: inline-block; width: 32%;"><img src="figures/umap_analysed_neurog2_Rpe65_featureplot.png" width="100%"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Lhx1_featureplot.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Kcnj8_featureplot.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Tie1_featureplot.png" width="100%"/></div>
+  <div style="display: inline-block; width: 32%;"><img src="figures/umap_analysed_neurog2_Lhx1_featureplot.png" width="100%"/></div>
+  <div style="display: inline-block; width: 32%;"><img src="figures/umap_analysed_neurog2_Kcnj8_featureplot.png" width="100%"/></div>
+  <div style="display: inline-block; width: 32%;"><img src="figures/umap_analysed_neurog2_Tie1_featureplot.png" width="100%"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Acta2_featureplot.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Rho_featureplot.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Nrl_featureplot.png" width="100%"/></div>
+  <div style="display: inline-block; width: 32%;"><img src="figures/umap_analysed_neurog2_Acta2_featureplot.png" width="100%"/></div>
+  <div style="display: inline-block; width: 32%;"><img src="figures/umap_analysed_neurog2_Rho_featureplot.png" width="100%"/></div>
+  <div style="display: inline-block; width: 32%;"><img src="figures/umap_analysed_neurog2_Nrl_featureplot.png" width="100%"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Arr3_featureplot.png" width="100%"/></div>
+  <div style="display: inline-block; width: 32%;"><img src="figures/umap_analysed_neurog2_Arr3_featureplot.png" width="100%"/></div>
 </div>
 
 
