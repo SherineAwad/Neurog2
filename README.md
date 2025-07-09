@@ -54,68 +54,69 @@ Below are the UMAP visualizations of marker gene expression across clusters. The
 
 ![UMAP CLUSTERS](figures/umap_clusters.png)
 
-<div align="left">
-  <!-- Original gene plots -->
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Malat1.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_mt-Atp6.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Sox9.png" width="100%"/></div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Glul.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Lhx2.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Rlbp1.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Malat1.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_mt-Atp6.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Sox9.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Rbfox3.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Csf1r.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Calb2.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Glul.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Lhx2.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Rlbp1.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Elavl4.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Calb1.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Sebox.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Rbfox3.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Csf1r.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Calb2.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Gad1.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Elavl3.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Cabp5.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Elavl4.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Calb1.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Sebox.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Isl1.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Slc6a9.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Ascl1.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Gad1.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Elavl3.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Cabp5.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Olig2.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Foxn4.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Chat.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Isl1.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Slc6a9.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Ascl1.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Prdm1.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Otx2.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Insm1.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Olig2.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Foxn4.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Chat.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Sox11.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Atoh7.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Hes5.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Prdm1.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Otx2.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Insm1.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Emx1.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_mScarlet3.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_GFP.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Sox11.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Atoh7.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Hes5.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Neurog2.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Tfap2a.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Bsn.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Emx1.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_mScarlet3.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_GFP.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Slc17a7.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Lhx4.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Neurog2.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Tfap2a.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Bsn.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Ccr2.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Pax2.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Rpe65.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Slc17a7.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Lhx4.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Lhx1.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Kcnj8.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Tie1.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Ccr2.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Pax2.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Rpe65.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Acta2.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Rho.png" width="100%"/></div>
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Nrl.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Lhx1.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Kcnj8.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Tie1.png" style="width: 100%;"/></div>
 
-  <div style="display: inline-block; width: 32%;"><img src="figures/umapclustered_analysed_neurog2_Arr3.png" width="100%"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Acta2.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Rho.png" style="width: 100%;"/></div>
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Nrl.png" style="width: 100%;"/></div>
+
+  <div style="width: 32%; margin-bottom: 10px;"><img src="figures/umapclustered_analysed_neurog2_Arr3.png" style="width: 100%;"/></div>
+
 </div>
 
 
