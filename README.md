@@ -166,7 +166,7 @@ Below are the UMAP visualizations of marker gene expression across clusters. The
     <img src="figures/umapclustered_analysed_neurog2_Bsn.png" style="width: 100%; height: auto;" />
   </div>
 
-  <div style="display: inline-block; width: 31%; margin-right
+</div>
 
 
 
