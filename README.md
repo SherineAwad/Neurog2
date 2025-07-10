@@ -51,6 +51,17 @@ Quality filtering was applied to remove low-quality cells and potential doublets
 
 This filtering step ensures removal of dead or dying cells and technical artifacts to improve downstream analysis quality.
 
+
+## Number of cells per sample 
+
+| Sample              | Cell Count |
+|---------------------|------------|
+| Neurog2_9SA_5weeks  | 27,732     |
+| Neurog2_9SA_2mo     | 11,486     |
+| control_2mo         | 9,701      |
+
+
+
 ### 4. Clustering 
 
 ## Marker Gene UMAP Plots
