@@ -105,7 +105,16 @@ We removed low quality clusters number:  ['7', '8', '11', '20', '28', '33', '34'
 then we reclustered and replot the marker genes as below: 
 
 
-![UMAP RE CLUSTERS](figures/umap_reClusters.png)
+## UMAP
+
+![UMAP RE CLUSTERS](figures/umap_reClusters.png) 
+
+
+## Per sample UMAP 
+
+![Control 2mo](figures/umap_reclustered_control_2mo.png)
+![Neurog2_9SA_2mo](figures/umap_reclustered_Neurog2_9SA_2mo.png)
+![Neurog2_9SA_5weeks](figures/umap_reclustered_Neurog2_9SA_5weeks.png)
 
 <img src="figures/umap_reClustered_clustered_analysed_neurog2_Ccr2.png" alt="Ccr2" width="33%"><img src="figures/umap_reClustered_clustered_analysed_neurog2_Pax2.png" alt="Pax2" width="33%"><img src="figures/umap_reClustered_clustered_analysed_neurog2_Rpe65.png" alt="Rpe65" width="33%">
 <img src="figures/umap_reClustered_clustered_analysed_neurog2_Lhx1.png" alt="Lhx1" width="33%"><img src="figures/umap_reClustered_clustered_analysed_neurog2_Kcnj8.png" alt="Kcnj8" width="33%"><img src="figures/umap_reClustered_clustered_analysed_neurog2_Tie1.png" alt="Tie1" width="33%">
