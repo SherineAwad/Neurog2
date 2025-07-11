@@ -211,7 +211,7 @@ Scrublet tries to automatically find a **threshold** where the doublet score dis
 
 ## How to run Snakemake 
 
-For dry run to check everythign before actual run:
+For dry run to check everything before actual run:
 
     snakemake -j1 -p --configfile config.yaml -n
 
