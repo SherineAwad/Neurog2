@@ -203,18 +203,24 @@ Scrublet tries to automatically find a **threshold** where the doublet score dis
 <img src="figures/doublet_score_histogram.png" width="550"/>
 
 
-## Doublet vs Singlet UMAP using default threshold 0.4  
+## Doublet vs Singlet UMAP using default threshold = 0.4  
 
 <img src="figures/umap_doubletStatus.png" width="550"/>
 
-## Doublet vs Singlet UMAP using threshold =0.1 
+## Doublet vs Singlet UMAP using threshold = 0.1 
 
 <img src="figures/umap_doubletStatus0.1.png" width="550"/>
 
 
-## Doublet vs Singlet UMAP using threshold =0.18 
+## Doublet vs Singlet UMAP using threshold = 0.18 
 
 <img src="figures/umap_doubletStatus0.18.png" width="550"/>
+
+
+## Doublet vs Singlet UMAP using threshold = 0.15 
+
+<img src="figures/umap_doubletStatus0.15.png" width="550"/>
+
 
 ## How to run Snakemake 
 
