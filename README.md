@@ -206,7 +206,7 @@ Scrublet tries to automatically find a **threshold** where the doublet score dis
 
 ## Doublet vs Singlet UMAP 
 
-<img src="figures/umap_doublets.png" width="550"/>
+<img src="figures/umap_doubletStatus.png" width="550"/>
 
 
 *Generated with Scanpy for single-cell RNA-seq analysis.*
