@@ -6,8 +6,10 @@ rule all:
          input:
             expand("{all}.h5ad", all= config['ALL']), 
             expand("analysed_{all}.h5ad", all=config['ALL']),
-	    expand("clustered_analysed_{all}.h5ad", all=config['ALL'])
- 
+	    expand("clustered_analysed_{all}.h5ad", all=config['ALL']), 
+            expand("reclustered_clustered_analysed_{all}.h5ad", all=config['ALL']), 
+            expand("doublesRemoved_reclustered_clustered_analysed_{all}.h5ad", all=config['ALL']),
+  
 rule preprocess: 
         input:  
             expand("{sample}_filtered_feature_bc_matrix.h5", sample = samples) 
@@ -44,16 +46,35 @@ rule cluster:
           python cluster.py {input} {params} 
           """
 
+
+rule reCluster: 
+      input:
+         expand("clustered_{all}.h5ad", all=config['ALL'])
+      output: 
+         expand("reclustered_clustered_analysed_{all}.h5ad", all=config['ALL']) 
+      shell: 
+         """
+         python reCluster.py {input}  
+         """
+
+rule doubletRemoval: 
+      input: 
+           expand("reclustered_clustered_analysed_{all}.h5ad", all=config['ALL'])
+      output: 
+          expand("doublesRemoved_reclustered_clustered_analysed_{all}.h5ad", all=config['ALL']),
+      shell: 
+          """
+          python doublet.py {input}  
+          """
+
 rule annotate:
        input:
           expand("clustered_{all}.h5ad", all=config['ALL'])
-       params: 
-          annofile = config['ANNOFILE'] 
+       params:
+          annofile = config['ANNOFILE']
        output:
           expand("annotated_{all}.h5ad", all=config['ALL'])
        shell:
           """
-          python annotate.py {input} {params.annofile} 
-          """
-
-      
+          python annotate.py {input} {params.annofile}
+          """      

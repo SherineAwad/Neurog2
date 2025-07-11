@@ -198,6 +198,9 @@ Scrublet tries to automatically find a **threshold** where the doublet score dis
 - ✏️ Manually adjust the threshold based on score distribution plots
 
 
+## Observed vs Simulated Doublet Scores 
+
+<img src="figures/real_simulated_histogram.png" width="550"/>
 
 ## Doublet Scores Distribution  
 

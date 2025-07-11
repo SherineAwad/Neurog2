@@ -15,31 +15,49 @@ newObject = "analysed_" + myObject
 base_name = os.path.splitext(os.path.basename(myObject))[0]
 
 
-combined_adata = sc.read(myObject)
+adata = sc.read(myObject)
 
 # Normalize total counts per cell to 10,000 and log-transform
-sc.pp.normalize_total(combined_adata, target_sum=1e4)
-sc.pp.log1p(combined_adata)
+sc.pp.normalize_total(adata, target_sum=1e4)
+sc.pp.log1p(adata)
 
 # Identify highly variable genes
-sc.pp.highly_variable_genes(combined_adata, flavor='seurat', n_top_genes=2000)
+sc.pp.highly_variable_genes(adata, flavor='seurat', n_top_genes=2000)
 
 # Scale the data (clip values to max 10)
-sc.pp.scale(combined_adata, max_value=10)
+sc.pp.scale(adata, max_value=10)
 
 # Perform PCA
-sc.tl.pca(combined_adata, svd_solver='arpack')
+sc.tl.pca(adata, svd_solver='arpack')
 
 # Compute neighborhood graph
-sc.pp.neighbors(combined_adata)
+sc.pp.neighbors(adata)
 
 # Compute UMAP embedding
-sc.tl.umap(combined_adata)
+sc.tl.umap(adata)
 
 # Plot UMAP colored by sample
-sc.pl.umap(combined_adata, color='sample', size=2, save=f"_{base_name}.png") 
+sc.pl.umap(adata, color='sample', size=2, save=f"_{base_name}.png") 
+
+
+
+cell_counts = adata.obs['sample'].value_counts()
+print(cell_counts)
+
+# Plot UMAP by sample 
+samples = adata.obs['sample'].unique()
+# Loop through samples and plot individual UMAPs
+for sample in samples:
+    sc.pl.umap(
+        adata[adata.obs['sample'] == sample],
+        color='sample',
+        title=f"Sample: {sample}",
+        size=20,
+        save=f"_sample_{sample}.png",
+        show=False
+    )
 
 # Save the processed object
-combined_adata.write(newObject)
+adata.write(newObject)
 
 
