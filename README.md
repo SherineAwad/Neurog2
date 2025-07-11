@@ -135,7 +135,7 @@ then we reclustered and replot the marker genes as below:
 
 
 
-## QC per Clsuter 
+## QC per Cluster 
 
 <img src="figures/qc_violin_by_reCluster.png" width="550"/>
 
@@ -148,6 +148,66 @@ then we reclustered and replot the marker genes as below:
 | control_2mo         | 8,674      |
 
 ---
+
+## Doublet Detection with Scrublet
+
+We are using **Scrublet**, a Python-based tool, to identify and remove potential doublets from our single-cell RNA-seq dataset.
+
+## Understanding Doublet Scores in Scrublet
+
+**Doublet scores in Scrublet** quantify how likely each cell is to be a **doublet**, based on how similar its gene expression profile is to simulated doublets.
+
+---
+
+### 🔍 In Detail
+
+#### What is a Doublet?
+
+A **doublet** occurs when **two cells are captured in the same droplet** during single-cell RNA sequencing. Their RNA is sequenced as if it's from one cell, producing a mixed transcriptome. This can distort downstream analyses such as clustering, dimensionality reduction, and marker gene identification.
+
+---
+
+### How Scrublet Works
+
+1. **Simulates Doublets**  
+   Scrublet generates **synthetic doublets** by randomly combining gene expression profiles from real cells.
+
+2. **Embedding**  
+   It runs **PCA** on both the real and synthetic cells to embed them in the same low-dimensional space.
+
+3. **Scoring**  
+   For each real cell, Scrublet calculates a **doublet score** based on its **proximity to simulated doublets** in PCA space.
+
+---
+
+### Interpreting the Scores
+
+- **Doublet score range**: Typically between **0 and 1**.
+- **High score (~0.5–1.0)**:  
+  The cell is very similar to simulated doublets → likely a **true doublet**.
+- **Low score (~0–0.2)**:  
+  The cell resembles real singlets → likely a **true singlet**.
+
+---
+
+### Threshold for Calling Doublets
+
+Scrublet tries to automatically find a **threshold** where the doublet score distribution separates singlets from doublets. We can:
+
+-  Let Scrublet pick the threshold automatically (default)
+- ✏️ Manually adjust the threshold based on score distribution plots
+
+
+
+## Doublet Scores Distribution  
+
+<img src="figures/doublet_score_histogram.png" width="550"/>
+
+
+## Doublet vs Singlet UMAP 
+
+<img src="figures/umap_doublets.png" width="550"/>
+
 
 *Generated with Scanpy for single-cell RNA-seq analysis.*
 
