@@ -17,51 +17,54 @@ base_name = os.path.splitext(os.path.basename(myObject))[0]
 # Read the full AnnData object
 combined_adata = sc.read(myObject)
 
-# Run Scrublet
+import scrublet as scr
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import scanpy as sc
+
 counts_matrix = combined_adata.X[:]
+
+# Initialize Scrublet (without threshold)
 scrub = scr.Scrublet(counts_matrix)
-doublet_scores, predicted_doublets = scrub.scrub_doublets()
 
-# To Increase expected doublet rate to 15% and simulate more doublets (3x)
-## scrub = scr.Scrublet(counts_matrix, expected_doublet_rate=0.15, sim_doublet_ratio=3.0)
+# Run doublet detection
+doublet_scores, _ = scrub.scrub_doublets()
 
+# Apply manual threshold of 0.1
+threshold = 0.15
+predicted_doublets = doublet_scores > threshold
 
-# Add prediction to .obs
-combined_adata.obs['predicted_doublets'] = predicted_doublets
-combined_adata.obs['doublet_status'] = ["Doublet" if x else "Singlet" for x in predicted_doublets]
-
-
-import pandas as pd  # ensure this is imported if not already
-
+# Add results to .obs
 combined_adata.obs['doublet_scores'] = doublet_scores
+combined_adata.obs['predicted_doublets'] = predicted_doublets
 combined_adata.obs['doublet_status'] = pd.Categorical(
-    combined_adata.obs['doublet_status'], categories=["Singlet", "Doublet"]
+    ["Doublet" if x else "Singlet" for x in predicted_doublets],
+    categories=["Singlet", "Doublet"]
 )
 
-
-#  PLOT UMAP WITH DOUBLET = RED, SINGLET = LIGHT GREY
+# UMAP plot: Doublets in red, Singlets in light grey
 palette = {'Singlet': 'lightgrey', 'Doublet': 'red'}
-
 sc.pl.umap(
     combined_adata,
     color='doublet_status',
     palette=palette,
     size=50,
     title='Doublets (red) vs Singlets (grey)',
-    save="_doubletStatus.png"
+    save="_doubletStatus0.15.png"
 )
 
-
+# Plot scrublet histogram (real vs simulated)
 scrub.plot_histogram()
 plt.savefig("figures/real_simulated_histogram.png", dpi=300)
 plt.close()
 
-
+# Plot histogram of doublet scores with custom threshold
 plt.hist(doublet_scores, bins=50)
 plt.xlabel('Doublet Score')
 plt.ylabel('Number of Cells')
 plt.title('Scrublet Doublet Score Distribution')
-plt.axvline(x=scrub.threshold_, color='r', linestyle='--', label='Default threshold')
+plt.axvline(x=threshold, color='r', linestyle='--', label='Manual threshold (0.1)')
 plt.legend()
 plt.tight_layout()
 plt.savefig("figures/doublet_score_histogram.png", dpi=300)
