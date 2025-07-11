@@ -208,5 +208,17 @@ Scrublet tries to automatically find a **threshold** where the doublet score dis
 <img src="figures/umap_doubletStatus.png" width="550"/>
 
 
+
+##### How to run Snakemake 
+
+For dry run to check everythign before actual run:
+
+    snakemake -j1 -p --configfile config.yaml -n
+
+For Actual run:
+
+    snakemake -j1 -p --configfile config.yaml
+
+
 *Generated with Scanpy for single-cell RNA-seq analysis.*
 
