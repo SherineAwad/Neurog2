@@ -237,8 +237,6 @@ The results were visualized using UMAP, colored by both prediction and score:
 ![Doublet Detection UMAP](figures/umap_adata_with_doublet_scores_doublets.png)
 
 
-
-
 ## How to run Snakemake 
 
 For dry run to check everything before actual run:
@@ -250,5 +248,23 @@ For Actual run:
     snakemake -j1 -p --configfile config.yaml
 
 
-*Generated with Scanpy for single-cell RNA-seq analysis.*
+## References
+
+- **Scanpy**  
+  Wolf, F. A., Angerer, P., & Theis, F. J. (2018).  
+  *Scanpy: large-scale single-cell gene expression data analysis*. Genome Biology, 19(1), 15.  
+  https://doi.org/10.1186/s13059-017-1382-0
+
+- **Scrublet**  
+  Wolock, S. L., Lopez, R., & Klein, A. M. (2019).  
+  *Scrublet: Computational Identification of Cell Doublets in Single-Cell Transcriptomic Data*. Cell Systems, 8(4), 281–291.e9.  
+  https://doi.org/10.1016/j.cels.2019.03.003
+
+- **DoubletDetection**  
+  Gayoso, A., Shor, J., Carr, A. J., & Yosef, N. (2019).  
+  *DoubletDetection: Computational doublet detection in single-cell RNA sequencing data using boosting algorithms*.  
+  [GitHub Repository](https://github.com/JonathanShor/DoubletDetection)  
+  *(No peer-reviewed publication; software citation based on GitHub authorship.)*
+
+
 
