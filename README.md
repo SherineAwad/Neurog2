@@ -236,6 +236,11 @@ The results were visualized using UMAP, colored by both prediction and score:
 
 ![Doublet Detection UMAP](figures/umap_doubletScores_neurog2_doublets.png)
 
+### Doublet Scores and Conversion
+
+   ![Doublets Thresholds](figures/threshold_test.png)
+ 
+   ![Doublets Conversion](figures/conversion_test.png)
 
 ## Clustering after Doublet Detection using with increased resolution to split for doublet clusters
 
