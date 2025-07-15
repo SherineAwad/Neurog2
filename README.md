@@ -267,6 +267,9 @@ The results were visualized using UMAP, colored by both prediction and score:
 ## Remove doublet cells with cutoff 0.5 
 
 
+![UMAP AFTER DOUBLET REMOVAL](figures/umap_clustered_doubletsDetected_neurog2_doubletsRemoved_clusters.png)
+
+
 ## How to run Snakemake 
 
 For dry run to check everything before actual run:
