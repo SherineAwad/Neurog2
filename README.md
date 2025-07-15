@@ -234,11 +234,10 @@ After running `DoubletDetection`, predicted doublets and doublet scores were sto
 
 The results were visualized using UMAP, colored by both prediction and score:
 
-![Doublet Detection UMAP](figures/umap_adata_with_doublet_scores_doublets.png)
+![Doublet Detection UMAP](figures/umap_doubletScores_neurog2_doublets.png)
 
 
-## Clustering after Doublet Detection using 
-
+## Clustering after Doublet Detection using with increased resolution to split for doublet clusters
 
 ![UMAP DOUBLET DETECTION CLUSTERS](figures/umap_ddClusters.png)
 
