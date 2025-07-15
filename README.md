@@ -256,9 +256,9 @@ For Actual run:
   https://doi.org/10.1186/s13059-017-1382-0
 
 - **Scrublet**  
-  Wolock, S. L., Lopez, R., & Klein, A. M. (2019).  
-  *Scrublet: Computational Identification of Cell Doublets in Single-Cell Transcriptomic Data*. Cell Systems, 8(4), 281–291.e9.  
-  https://doi.org/10.1016/j.cels.2019.03.003
+Wolock, S. L., Lopez, R., & Klein, A. M. (2019).  
+*Scrublet: Computational Identification of Cell Doublets in Single-Cell Transcriptomic Data*. Cell Systems, 8(4), 281–291.e9.  
+https://doi.org/10.1016/j.cels.2018.11.005
 
 - **DoubletDetection**  
   Gayoso, A., Shor, J., Carr, A. J., & Yosef, N. (2019).  
