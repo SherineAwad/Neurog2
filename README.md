@@ -240,7 +240,7 @@ The results were visualized using UMAP, colored by both prediction and score:
 
    ![Doublets Thresholds](figures/threshold_test.png)
  
-   ![Doublets Conversion](figures/conversion_test.png)
+   ![Doublets Conversion](figures/convergence_test.png)
 
 ## Clustering after Doublet Detection using with increased resolution to split for doublet clusters
 
