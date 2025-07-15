@@ -222,6 +222,23 @@ Scrublet tries to automatically find a **threshold** where the doublet score dis
 <img src="figures/umap_doubletStatus0.15.png" width="550"/>
 
 
+## Doublet Detection using `DoubletDetection`
+
+Unlike `Scrublet`, which can operate effectively on clustered or preprocessed `AnnData` objects, the `DoubletDetection` tool is more sensitive to data structure and expects the **original, unclustered** `AnnData` object. Running it on a processed or subsetted object may yield suboptimal or misleading results.
+
+In the workflow, we applied `DoubletDetection` to the original data (`adata`) to ensure it captures the full transcriptomic diversity and avoids artifacts introduced during clustering.
+
+After running `DoubletDetection`, predicted doublets and doublet scores were stored in `adata.obs` under the keys:
+- `predicted_doublet`: Boolean flag indicating whether each cell is a predicted doublet.
+- `doublet_score`: Confidence score associated with doublet prediction.
+
+The results were visualized using UMAP, colored by both prediction and score:
+
+![Doublet Detection UMAP](figures/umap_adata_with_doublet_scores_doublets.png)
+
+
+
+
 ## How to run Snakemake 
 
 For dry run to check everything before actual run:
