@@ -242,9 +242,10 @@ The results were visualized using UMAP, colored by both prediction and score:
  
    ![Doublets Conversion](figures/convergence_test.png)
 
-## Clustering after Doublet Detection using with increased resolution to split for doublet clusters
+## Clustering after Doublet Detection 
 
-![UMAP DOUBLET DETECTION CLUSTERS](umap_ddanalysed_doubletScores_neurog2_ddClusters.png)
+![UMAP DOUBLET DETECTION CLUSTERS](figures/umap_ddanalysed_doubletScores_neurog2_ddClusters.png)
+
 ## Marker Genes UMAP 
 
 <img src="figures/umap_ddanalysed_doubletScores_neurog2_Acta2.png" alt="Acta2" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Csf1r.png" alt="Csf1r" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Insm1.png" alt="Insm1" width="33%">
