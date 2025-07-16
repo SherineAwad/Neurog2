@@ -249,7 +249,7 @@ The results were visualized using UMAP, colored by both prediction and score:
 
 <img src="figures/umap_ddanalysed_doubletScores_neurog2_Acta2.png" alt="Acta2" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Csf1r.png" alt="Csf1r" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Insm1.png" alt="Insm1" width="33%">
 <img src="figures/umap_ddanalysed_doubletScores_neurog2_Nrl.png" alt="Nrl" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Slc17a7.png" alt="Slc17a7" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Arr3.png" alt="Arr3" width="33%">
-<img src="figures/umap_ddanalysed_doubletScores_neurog2_ddClusters.png" alt="ddClusters" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Isl1.png" alt="Isl1" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Olig2.png" alt="Olig2" width="33%">
+<img src="figures/umap_ddanalysed_doubletScores_neurog2_Sebox.png" alt="Sebox" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Isl1.png" alt="Isl1" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Olig2.png" alt="Olig2" width="33%">
 <img src="figures/umap_ddanalysed_doubletScores_neurog2_Slc6a9.png" alt="Slc6a9" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Ascl1.png" alt="Ascl1" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Elavl3.png" alt="Elavl3" width="33%">
 <img src="figures/umap_ddanalysed_doubletScores_neurog2_Kcnj8.png" alt="Kcnj8" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Otx2.png" alt="Otx2" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Sox11.png" alt="Sox11" width="33%">
 <img src="figures/umap_ddanalysed_doubletScores_neurog2_Atoh7.png" alt="Atoh7" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Elavl4.png" alt="Elavl4" width="33%"><img src="figures/umap_ddanalysed_doubletScores_neurog2_Lhx1.png" alt="Lhx1" width="33%">
@@ -270,7 +270,7 @@ The results were visualized using UMAP, colored by both prediction and score:
 ## Remove doublet cells with cutoff 0.5 
 
 
-![UMAP AFTER DOUBLET REMOVAL](umap_clustered_doubletsDetected_neurog2_doubletsRemoved_clusters.png)
+![UMAP AFTER DOUBLET REMOVAL](figures/umap_clustered_doubletsDetected_neurog2_doubletsRemoved_clusters.png)
 
 
 ## How to run Snakemake 
