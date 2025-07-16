@@ -267,6 +267,41 @@ The results were visualized using UMAP, colored by both prediction and score:
 <img src="figures/umap_clustered_ddanalysed_doubletScores_neurog2_GFP.png" alt="GFP" width="33%"><img src="figures/umap_clustered_ddanalysed_doubletScores_neurog2_Neurog2.png" alt="Neurog2" width="33%"><img src="figures/umap_clustered_ddanalysed_doubletScores_neurog2_Tfap2a.png" alt="Tfap2a" width="33%">
 <img src="figures/umap_clustered_ddanalysed_doubletScores_neurog2_Bsn.png" alt="Bsn" width="33%"><img src="figures/umap_clustered_ddanalysed_doubletScores_neurog2_Slc17a7.png" alt="Slc17a7" width="33%"><img src="figures/umap_clustered_ddanalysed_doubletScores_neurog2_Lhx4.png" alt="Lhx4" width="33%">
 
+Sure! Here's your explanation formatted in **Markdown**:
+
+---
+
+###  Understanding `doublet_score` Thresholds
+
+The `doublet_score` typically ranges from **0 to 1**, where **higher values indicate a higher probability of a cell being a doublet**.
+
+Your filter in the code:
+
+```python
+combined_adata = combined_adata[combined_adata.obs['doublet_score'] >= threshold]
+```
+
+This means you're **keeping** cells with `doublet_score >= threshold`.
+
+---
+
+###  Interpretation of Threshold:
+
+* **Higher threshold** (e.g., `0.6`) → **Stricter filtering**
+  🔹 You keep **fewer** cells
+  🔹 More potential doublets are removed
+
+* **Lower threshold** (e.g., `0.4`) → **More relaxed filtering**
+  🔹 You keep **more** cells
+  🔹 Even those with slightly elevated doublet scores are retained
+
+---
+
+###  Summary:
+
+* Relax filtering → use a **lower threshold** (e.g., `0.5 → 0.4`)
+* Stricter filtering → use a **higher threshold** (e.g., `0.5 → 0.6`)
+
 
 
 ## Remove doublet cells with cutoff 0.5 
