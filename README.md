@@ -244,7 +244,7 @@ The results were visualized using UMAP, colored by both prediction and score:
 
 ## Clustering after Doublet Detection 
 
-![UMAP DOUBLET DETECTION CLUSTERS](figures/umap_clustered_doubletsDetected_neurog2_doubletsRemoved_clusters.png)
+![UMAP DOUBLET DETECTION CLUSTERS](figures/umap_ddanalysed_doubletScores_neurog2_ddClusters.png)
 
 
 ## Marker Genes UMAP 
