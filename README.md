@@ -274,7 +274,6 @@ The results were visualized using UMAP, colored by both prediction and score:
 
 ![UMAP AFTER DOUBLET REMOVAL](figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_doubletsRemoved_clusters.png)
 
-
 ## Marker Genes
 
 <img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Lhx4.png" alt="Lhx4" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Ccr2.png" alt="Ccr2" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Pax2.png" alt="Pax2" width="33%">
