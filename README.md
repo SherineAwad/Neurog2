@@ -272,9 +272,10 @@ The results were visualized using UMAP, colored by both prediction and score:
 ## Remove doublet cells with cutoff 0.5 
 
 
-![UMAP AFTER DOUBLET REMOVAL](figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_doubletsRemoved_clusters.png) 
-## Marker Genes
+![UMAP AFTER DOUBLET REMOVAL](figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_doubletsRemoved_clusters.png)
 
+
+## Marker Genes
 
 <img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Lhx4.png" alt="Lhx4" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Ccr2.png" alt="Ccr2" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Pax2.png" alt="Pax2" width="33%">
 <img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Rpe65.png" alt="Rpe65" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Lhx1.png" alt="Lhx1" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Kcnj8.png" alt="Kcnj8" width="33%">
