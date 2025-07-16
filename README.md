@@ -276,7 +276,7 @@ The results were visualized using UMAP, colored by both prediction and score:
 ## Marker Genes
 
 
-<img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_doubletsRemoved_clusters.png" alt="doubletsRemoved_clusters" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Ccr2.png" alt="Ccr2" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Pax2.png" alt="Pax2" width="33%">
+<img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Lhx4.png" alt="Lhx4" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Ccr2.png" alt="Ccr2" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Pax2.png" alt="Pax2" width="33%">
 <img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Rpe65.png" alt="Rpe65" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Lhx1.png" alt="Lhx1" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Kcnj8.png" alt="Kcnj8" width="33%">
 <img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Tie1.png" alt="Tie1" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Acta2.png" alt="Acta2" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Rho.png" alt="Rho" width="33%">
 <img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Nrl.png" alt="Nrl" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Arr3.png" alt="Arr3" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Malat1.png" alt="Malat1" width="33%">
@@ -291,7 +291,6 @@ The results were visualized using UMAP, colored by both prediction and score:
 <img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Atoh7.png" alt="Atoh7" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Hes5.png" alt="Hes5" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Emx1.png" alt="Emx1" width="33%">
 <img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_mScarlet3.png" alt="mScarlet3" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_GFP.png" alt="GFP" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Neurog2.png" alt="Neurog2" width="33%">
 <img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Tfap2a.png" alt="Tfap2a" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Bsn.png" alt="Bsn" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Slc17a7.png" alt="Slc17a7" width="33%">
-<img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Lhx4.png" alt="Lhx4" width="33%">
 
 
 
