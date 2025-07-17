@@ -287,13 +287,13 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 
 ###  Interpretation of Threshold:
 
-* **Higher threshold** (e.g., `0.6`) → **Stricter filtering**
-  🔹 You keep **fewer** cells
-  🔹 More potential doublets are removed
+* **Higher threshold** (e.g., `0.9`) → **Stricter filtering**
+  🔹 You keep **more** cells
+  🔹 Less doublets are removed
 
 * **Lower threshold** (e.g., `0.4`) → **More relaxed filtering**
-  🔹 You keep **more** cells
-  🔹 Even those with slightly elevated doublet scores are retained
+  🔹 You keep **fewer** cells
+  🔹 More potential doublets are removed 
 
 ---
 
