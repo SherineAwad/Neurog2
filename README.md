@@ -309,7 +309,7 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 ![UMAP after doublet removal](figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_doubletsRemoved_clusters.png)
 
 
-## Marker Genes
+## Marker Genes after doublet removal at threshold 0.5 
 
 <img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Lhx4.png" alt="Lhx4" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Ccr2.png" alt="Ccr2" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Pax2.png" alt="Pax2" width="33%">
 <img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Rpe65.png" alt="Rpe65" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Lhx1.png" alt="Lhx1" width="33%"><img src="figures/umap_doubletsRemoved_clustered_doubletsDetected_neurog2_Kcnj8.png" alt="Kcnj8" width="33%">
@@ -332,7 +332,7 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 
 ![UMAP after doublet removal](figures/umap_doubletsRemoved_threshold0.4_clustered_doubletsDetected_neurog2_doubletsRemoved_threshold0.4_clusters.png)
 
-## Marker Genes
+## Marker Genes after doublet removal at threshold 0.4 
 
 <img src="figures/umap_doubletsRemoved_threshold0.4_clustered_doubletsDetected_neurog2_threshold0.4_Ccr2.png" alt="Ccr2" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.4_clustered_doubletsDetected_neurog2_threshold0.4_Pax2.png" alt="Pax2" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.4_clustered_doubletsDetected_neurog2_threshold0.4_Rpe65.png" alt="Rpe65" width="33%">
 <img src="figures/umap_doubletsRemoved_threshold0.4_clustered_doubletsDetected_neurog2_threshold0.4_Lhx1.png" alt="Lhx1" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.4_clustered_doubletsDetected_neurog2_threshold0.4_Kcnj8.png" alt="Kcnj8" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.4_clustered_doubletsDetected_neurog2_threshold0.4_Tie1.png" alt="Tie1" width="33%">
@@ -362,16 +362,15 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 ![Doublet Thresholds](figures/0.9threshold_test.png)
 
 
-## UMAP after doublet detection and clustering 
+## UMAP after  clustering 
 
 ![Doublet Detection](figures/umap_clustered_ddanalysed_doubletScores_0.9_neurog2_ddClusters.png) 
 
-## UMAP after doublet removal
+## UMAP after doublet removal at threshold 0.9 
  
 ![Doublet Removal](figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_doubletsRemoved_threshold0.9_clusters.png)
 
-### Marker Genes UMAP 
-
+### Marker Genes UMAP after doublet removal at threshold 0.9 
 
 <img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Ccr2.png" alt="Ccr2" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Pax2.png" alt="Pax2" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Rpe65.png" alt="Rpe65" width="33%">
 <img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Lhx1.png" alt="Lhx1" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Kcnj8.png" alt="Kcnj8" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Tie1.png" alt="Tie1" width="33%">
@@ -392,15 +391,15 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 
 ## Doublet removal using 0.8 threshold 
 
-## UMAP after doublet detection and clustering 
+## UMAP after  clustering 
 
 ![Doublet Detection](figures/umap_clustered_ddanalysed_doubletScores_0.8_neurog2_ddClusters.png)
 
-## UMAP after doublet removal
+## UMAP after doublet removal at threshold 0.8 
 
 ![Doublet Removal](figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_doubletsRemoved_threshold0.8_clusters.png)
 
-### Marker Genes UMAP 
+### Marker Genes UMAP after doublet removal at threshold 0.8  
 
 <img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Arr3.png" alt="Arr3" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Malat1.png" alt="Malat1" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_mt-Atp6.png" alt="mt-Atp6" width="33%">
 <img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Sox9.png" alt="Sox9" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Glul.png" alt="Glul" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Lhx2.png" alt="Lhx2" width="33%">
