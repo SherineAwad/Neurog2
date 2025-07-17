@@ -389,6 +389,35 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 <img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_GFP.png" alt="GFP" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Neurog2.png" alt="Neurog2" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Tfap2a.png" alt="Tfap2a" width="33%">
 <img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Bsn.png" alt="Bsn" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Slc17a7.png" alt="Slc17a7" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Lhx4.png" alt="Lhx4" width="33%">
 
+
+## Doublet removal using 0.8 threshold 
+
+## UMAP after doublet detection and clustering 
+
+![Doublet Detection](figures/umap_clustered_ddanalysed_doubletScores_0.8_neurog2_ddClusters.png)
+
+## UMAP after doublet removal
+
+![Doublet Removal](figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_doubletsRemoved_threshold0.8_clusters.png)
+
+### Marker Genes UMAP 
+
+<img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Arr3.png" alt="Arr3" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Malat1.png" alt="Malat1" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_mt-Atp6.png" alt="mt-Atp6" width="33%">
+<img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Sox9.png" alt="Sox9" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Glul.png" alt="Glul" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Lhx2.png" alt="Lhx2" width="33%">
+<img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Rlbp1.png" alt="Rlbp1" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Rbfox3.png" alt="Rbfox3" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Csf1r.png" alt="Csf1r" width="33%">
+<img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Calb2.png" alt="Calb2" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Elavl4.png" alt="Elavl4" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Calb1.png" alt="Calb1" width="33%">
+<img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Sebox.png" alt="Sebox" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Gad1.png" alt="Gad1" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Elavl3.png" alt="Elavl3" width="33%">
+<img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Cabp5.png" alt="Cabp5" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Isl1.png" alt="Isl1" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Slc6a9.png" alt="Slc6a9" width="33%">
+<img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Ascl1.png" alt="Ascl1" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Olig2.png" alt="Olig2" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Foxn4.png" alt="Foxn4" width="33%">
+<img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Chat.png" alt="Chat" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Prdm1.png" alt="Prdm1" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Otx2.png" alt="Otx2" width="33%">
+<img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Insm1.png" alt="Insm1" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Sox11.png" alt="Sox11" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Atoh7.png" alt="Atoh7" width="33%">
+<img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Hes5.png" alt="Hes5" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Emx1.png" alt="Emx1" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_mScarlet3.png" alt="mScarlet3" width="33%">
+<img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_GFP.png" alt="GFP" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Neurog2.png" alt="Neurog2" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Tfap2a.png" alt="Tfap2a" width="33%">
+<img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Bsn.png" alt="Bsn" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Slc17a7.png" alt="Slc17a7" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Lhx4.png" alt="Lhx4" width="33%">
+
+
+
+
 ## How to run Snakemake 
 
 For dry run to check everything before actual run:
