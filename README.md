@@ -352,7 +352,10 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 <img src="figures/umap_doubletsRemoved_threshold0.4_clustered_doubletsDetected_neurog2_threshold0.4_Slc17a7.png" alt="Slc17a7" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.4_clustered_doubletsDetected_neurog2_threshold0.4_Slc6a9.png" alt="Slc6a9" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.4_clustered_doubletsDetected_neurog2_threshold0.4_Lhx4.png" alt="Lhx4" width="33%">
 
 
-## Threshold 0.9 
+## Doublet Removal at Threshold 0.9 
+
+### Checking if distribution will differ at different cutoff 
+
 
 ![Doublet Prediction](figures/umap_ddanalysed_doubletScores_0.9_neurog2_doublets.png)
 ![Doublet Conversion](figures/0.9conversion_test.png)
@@ -367,7 +370,7 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
  
 ![Doublet Removal](figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_doubletsRemoved_threshold0.9_clusters.png)
 
-### Marker Genes' UMAP 
+### Marker Genes UMAP 
 
 
 <img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Ccr2.png" alt="Ccr2" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Pax2.png" alt="Pax2" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Rpe65.png" alt="Rpe65" width="33%">
