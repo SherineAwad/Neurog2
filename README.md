@@ -429,6 +429,30 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 
 ![Doublet Reclustering](figures/umapDDreClustereddoubletScores_0.8_neurog2.png)
 
+
+### Pre filtering QC
+![Pre QC](figures/violin_doubletScores_0.8_neurog2_PreQC.png)
+
+### Filter using these parameterss 
+
+# 📌 Filter cells based on quality thresholds
+
+# Keep cells with 1500–8000 detected genes
+adata = adata[(adata.obs.n_genes_by_counts > 1500) & (adata.obs.n_genes_by_counts < 8000), :]
+
+# Keep cells with total UMI counts above 3000
+adata = adata[adata.obs.total_counts > 3000, :]
+
+# Keep cells with mitochondrial gene percentage below 7%
+adata = adata[adata.obs.pct_counts_mt < 7, :]
+
+
+### Post filtering QC
+
+![Post QC](figures/violin_doubletScores_0.8_neurog2_PostQC.png)
+
+## After reClustering 
+
 ![Doublet QC](figures/doubletScores_0.8_neurog2DDreClustered_qc_violin.png)
 ### Marker genes after reClustering 
 
