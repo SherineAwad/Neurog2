@@ -425,7 +425,11 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 <img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Nrl.png" alt="Nrl" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Tie1.png" alt="Tie1" width="33%"><img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_mt-Atp6.png" alt="mt-Atp6" width="33%">
 <img src="figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_threshold0.8_Malat1.png" alt="Malat1" width="33%">
 
+## After Reclustering and QC plot  
 
+![Doublet Reclustering](figures/umapAfter_DoubletRemoval0.8.png)
+
+![Doublet QC](figures/doubletScores_0.8_neurog2qc_violin.png) 
 
 ## How to run Snakemake 
 
