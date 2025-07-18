@@ -234,7 +234,6 @@ After running `DoubletDetection`, predicted doublets and doublet scores were sto
 
 The results were visualized using UMAP, colored by both prediction and score:
 
-![UMAP](figures/umap_doubletScores_neurog2_doublets.png)
 
 ### Doublet Scores and Conversion using default threshold 0.5
 
@@ -246,8 +245,8 @@ The results were visualized using UMAP, colored by both prediction and score:
 ### Doublet Scores and Conversion using threshold 0.9 
 
 ![Doublet Prediction](figures/umap_ddanalysed_doubletScores_0.9_neurog2_doublets.png)
-![Doublet Conversion](figures/0.9conversion_test.png)
 ![Doublet Thresholds](figures/0.9threshold_test.png)
+![Doublet Conversion](figures/0.9conversion_test.png)
 
 
 ---
