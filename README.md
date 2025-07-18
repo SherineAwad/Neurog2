@@ -371,9 +371,9 @@ adata = adata[
 
 ### UMAP per Sample 
 
-![Control 2mo](umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_control_2mo.png)
-![Neurog2_9SA_2mo](umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_Neurog2_9SA_2mo.png)
-![Neurog2_9SA_5weeks](umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_Neurog2_9SA_5weeks.png)
+![Control 2mo](figures/umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_control_2mo.png)
+![Neurog2_9SA_2mo](figures/umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_Neurog2_9SA_2mo.png)
+![Neurog2_9SA_5weeks](figures/umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_Neurog2_9SA_5weeks.png)
 
 
 
