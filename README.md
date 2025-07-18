@@ -429,8 +429,7 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 
 ![Doublet Reclustering](figures/umapDDreClustereddoubletScores_0.8_neurog2.png)
 
-![Doublet QC](figures/doubletScores_0.8_neurog2qc_violin.png) 
-
+![Doublet QC](figures/doubletScores_0.8_neurog2DDreClustered_qc_violin.png)
 ### Marker genes after reClustering 
 
 <img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_mt-Atp6.png" alt="mt-Atp6" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Apoe.png" alt="Apoe" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Glul.png" alt="Glul" width="33%">
