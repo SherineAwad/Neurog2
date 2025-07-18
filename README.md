@@ -369,6 +369,28 @@ adata = adata[
 ![Doublet QC](figures/refined_doubletsRemoved_threshold0.8_neurog2_qc_violin.png)
 
 
+### UMAP per Sample 
+
+![Control 2mo](umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_control_2mo.png)
+![Neurog2_9SA_2mo](umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_Neurog2_9SA_2mo.png)
+![Neurog2_9SA_5weeks](umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_Neurog2_9SA_5weeks.png)
+
+
+
+
+### Remove clusters 
+
+| ID | Cell Type           |
+|-----|--------------------|
+| 7   | Bad rod            |
+| 8   | Microglia          |
+| 18  | Microglia          |
+| 27  | Monocyte           |
+| 32  | Astrocyte          |
+| 33  | Smooth muscle cells|
+
+
+
 ## How to run Snakemake 
 
 For dry run to check everything before actual run:
