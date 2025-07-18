@@ -446,7 +446,7 @@ adata = adata[
 ### Post filtering QC
 
 ![Post QC](figures/violin_refined_doubletsRemoved_threshold0.8_neurog2_PostQC.png) 
-figures/violin_doubletScores_0.8_neurog2_PostQC.png)
+
 
 
 ![Doublet QC](figures/refined_doubletsRemoved_threshold0.8_neurog2_qc_violin.png)
