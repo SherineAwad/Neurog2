@@ -456,27 +456,73 @@ adata = adata[adata.obs.pct_counts_mt < 7, :]
 ![Doublet QC](figures/doubletScores_0.8_neurog2DDreClustered_qc_violin.png)
 ### Marker genes after reClustering 
 
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_mt-Atp6.png" alt="mt-Atp6" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Apoe.png" alt="Apoe" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Glul.png" alt="Glul" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Abca8a.png" alt="Abca8a" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Slc1a3.png" alt="Slc1a3" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Vim.png" alt="Vim" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Malat1.png" alt="Malat1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Lhx2.png" alt="Lhx2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Sox9.png" alt="Sox9" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Pax6.png" alt="Pax6" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Prdx6.png" alt="Prdx6" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Aqp4.png" alt="Aqp4" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Hes5.png" alt="Hes5" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Rlbp1.png" alt="Rlbp1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Slc17a7.png" alt="Slc17a7" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_GFP.png" alt="GFP" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Cabp5.png" alt="Cabp5" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Hes1.png" alt="Hes1" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Elavl3.png" alt="Elavl3" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Rho.png" alt="Rho" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Otx2.png" alt="Otx2" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_mScarlet3.png" alt="mScarlet3" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Notch1.png" alt="Notch1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Lhx4.png" alt="Lhx4" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Pax2.png" alt="Pax2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Rpe65.png" alt="Rpe65" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Ascl1.png" alt="Ascl1" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Gfap.png" alt="Gfap" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Slc6a9.png" alt="Slc6a9" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Csf1r.png" alt="Csf1r" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Rbfox3.png" alt="Rbfox3" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Sebox.png" alt="Sebox" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Bsn.png" alt="Bsn" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Prdm1.png" alt="Prdm1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Calb2.png" alt="Calb2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Elavl4.png" alt="Elavl4" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Isl1.png" alt="Isl1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Nrl.png" alt="Nrl" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Chat.png" alt="Chat" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Arr3.png" alt="Arr3" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Sox11.png" alt="Sox11" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Ccr2.png" alt="Ccr2" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Lhx1.png" alt="Lhx1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Atoh7.png" alt="Atoh7" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Foxn4.png" alt="Foxn4" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Calb1.png" alt="Calb1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Olig2.png" alt="Olig2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Tfap2a.png" alt="Tfap2a" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Neurog2.png" alt="Neurog2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Acta2.png" alt="Acta2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Kcnj8.png" alt="Kcnj8" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Insm1.png" alt="Insm1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Emx1.png" alt="Emx1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Gad1.png" alt="Gad1" width="33%">
-<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Tie1.png" alt="Tie1" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Hes5.png" alt="Hes5" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Hes1.png" alt="Hes1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Otx2.png" alt="Otx2" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_mScarlet3.png" alt="mScarlet3" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Sox2.png" alt="Sox2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Sox9.png" alt="Sox9" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Prkca.png" alt="Prkca" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Prox1.png" alt="Prox1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Lhx4.png" alt="Lhx4" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Rbfox3.png" alt="Rbfox3" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Thy1.png" alt="Thy1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Cabp5.png" alt="Cabp5" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Aqp4.png" alt="Aqp4" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Slc6a9.png" alt="Slc6a9" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Prdx6.png" alt="Prdx6" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Gfap.png" alt="Gfap" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Abca8a.png" alt="Abca8a" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Guca1b.png" alt="Guca1b" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Rbpms.png" alt="Rbpms" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Onecut2.png" alt="Onecut2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_GFP.png" alt="GFP" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Rho.png" alt="Rho" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Bsn.png" alt="Bsn" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Rlbp1.png" alt="Rlbp1" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Sox11.png" alt="Sox11" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Opn1sw.png" alt="Opn1sw" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Neurog2.png" alt="Neurog2" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Thrb.png" alt="Thrb" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Crx.png" alt="Crx" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Gnat2.png" alt="Gnat2" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Cx3cr1.png" alt="Cx3cr1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Slc17a7.png" alt="Slc17a7" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Bhlhe23.png" alt="Bhlhe23" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Lhx2.png" alt="Lhx2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Opn1mw.png" alt="Opn1mw" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Igf2.png" alt="Igf2" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Gad2.png" alt="Gad2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Elavl4.png" alt="Elavl4" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Notch1.png" alt="Notch1" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Pecam1.png" alt="Pecam1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Calb2.png" alt="Calb2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Elavl3.png" alt="Elavl3" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Atoh7.png" alt="Atoh7" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Pdgfra.png" alt="Pdgfra" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Rom1.png" alt="Rom1" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Ascl1.png" alt="Ascl1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Sebox.png" alt="Sebox" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Vsx2.png" alt="Vsx2" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Onecut1.png" alt="Onecut1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Csf1r.png" alt="Csf1r" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Rpe65.png" alt="Rpe65" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Prdm1.png" alt="Prdm1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Olig2.png" alt="Olig2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Trpm1.png" alt="Trpm1" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Nr2e3.png" alt="Nr2e3" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Grm6.png" alt="Grm6" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Chat.png" alt="Chat" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Tfap2a.png" alt="Tfap2a" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Acta2.png" alt="Acta2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Pou4f3.png" alt="Pou4f3" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Cldn5.png" alt="Cldn5" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Mfge8.png" alt="Mfge8" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Pvalb.png" alt="Pvalb" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Pvalb3.png" alt="Pvalb3" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Lhx1.png" alt="Lhx1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Mlc1.png" alt="Mlc1" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Foxp2.png" alt="Foxp2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Ttr.png" alt="Ttr" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Mpp3.png" alt="Mpp3" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Vtn.png" alt="Vtn" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Eomes.png" alt="Eomes" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Stmn2.png" alt="Stmn2" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Col1a1.png" alt="Col1a1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Nckap1l.png" alt="Nckap1l" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Scgn.png" alt="Scgn" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Nefl.png" alt="Nefl" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Mmp12.png" alt="Mmp12" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Sparc.png" alt="Sparc" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Myl9.png" alt="Myl9" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Cldn4.png" alt="Cldn4" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Vtn2.png" alt="Vtn2" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Gnai2.png" alt="Gnai2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Tbx21.png" alt="Tbx21" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Gjb6.png" alt="Gjb6" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_S100a10.png" alt="S100a10" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Sema3a.png" alt="Sema3a" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Atp1b2.png" alt="Atp1b2" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Pcdh15.png" alt="Pcdh15" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Slc1a2.png" alt="Slc1a2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Kcna1.png" alt="Kcna1" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Slc6a1.png" alt="Slc6a1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Msn.png" alt="Msn" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Spp1.png" alt="Spp1" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Acta1.png" alt="Acta1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Mgp.png" alt="Mgp" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Npy.png" alt="Npy" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Cplx2.png" alt="Cplx2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Tnnt2.png" alt="Tnnt2" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Slc32a1.png" alt="Slc32a1" width="33%">
+<img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Nek7.png" alt="Nek7" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Tac1.png" alt="Tac1" width="33%"><img src="figures/umap_DDreClustered_doubletScores_0.8_neurog2_Ephx2.png" alt="Ephx2" width="33%">
 
 
+
+
+### ✅ Clusters  Are More Likely to Be Low-Quality:
+
+#### **Cluster 38**
+
+* **n\_genes\_by\_counts**: Clear drop — low median around \~2000
+* **total\_counts**: Very low, large spread
+* **pct\_counts\_mt**: Slightly high (long tail to \~6%)
+* **🧠 Verdict**: **Yes, should be removed**. This cluster appears consistently low-quality across all metrics.
+
+#### **Cluster 40**
+
+* **n\_genes\_by\_counts**: Extremely low (\~1500 median)
+* **total\_counts**: Very low (\~3000–4000 median)
+* **pct\_counts\_mt**: Elevated — up to \~6%
+* **🧠 Verdict**: **Definitely remove** — classically low-quality.
+
+#### **Cluster 41**
+
+* **n\_genes\_by\_counts**: Also low
+* **total\_counts**: Similar to 40, slightly higher
+* **pct\_counts\_mt**: Slightly elevated
+* **🧠 Verdict**: **Remove** — consistent with stressed/damaged cells.
+
+#### **Cluster 42**
+
+* **n\_genes\_by\_counts**: Lower end (\~2500–3000)
+* **total\_counts**: Below median
+* **pct\_counts\_mt**: Borderline elevated
+* **🧠 Verdict**: **Optional remove** — borderline, but could be cautious and remove.
 
 
 
