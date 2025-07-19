@@ -36,6 +36,8 @@ if 'leiden' not in adata.obs:
 # Filter out unwanted clusters
 initial_cells = adata.n_obs
 adata = adata[~adata.obs['leiden'].isin(clusters_to_remove)].copy()
+## Scale
+sc.pp.scale(adata, max_value=10)
 
 # Recompute PCA on filtered data
 sc.tl.pca(adata, svd_solver='arpack')
