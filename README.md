@@ -429,7 +429,10 @@ adata = adata[
 <img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Gnat2.png" alt="Gnat2" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Pecam1.png" alt="Pecam1" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Vsx1.png" alt="Vsx1" width="33%">
 <img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Grm6.png" alt="Grm6" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Vsx2.png" alt="Vsx2" width="33%">
 
+## Annotations 
 
+![legend_annotations](figures/umapreclustered_refined_doubletsRemoved_threshold0.8_neurog2_annotations.png)
+![ON_annotations](figures/umapreclustered_refined_doubletsRemoved_threshold0.8_neurog2_annotationsON.png)
 
 ## How to run Snakemake 
 
