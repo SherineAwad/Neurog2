@@ -236,11 +236,6 @@ then we reclustered and replot the marker genes as below:
 <img src="figures/umap_reClustered_clustered_analysed_neurog2_Slc17a7.png" alt="Slc17a7" width="33%"><img src="figures/umap_reClustered_clustered_analysed_neurog2_Slc6a9.png" alt="Slc6a9" width="33%"><img src="figures/umap_reClustered_clustered_analysed_neurog2_Lhx4.png" alt="Lhx4" width="33%">
 
 
-
-### QC per Cluster 
-
-<img src="figures/qc_violin_by_reCluster.png" width="550"/>
-
 ## Number of cells per sample 
 
 | Sample              | Cell Count |
