@@ -35,32 +35,6 @@ UMAP plot colored by sample, showing clustering and distribution of single cells
 ![Neurog2_9SA_5weeks](figures/umap_sample_Neurog2_9SA_5weeks.png)
 
 ### 2. Quality Control Violin Plot
-
-
-
----
-
-###  Scanpy QC Metrics — Quick Overview
-
-#### 🔹 `n_genes_by_counts`
-
-* **Definition**: Number of genes with **non-zero counts** in each cell.
-* **Use**: Helps filter out cells with too few expressed genes (often poor quality or empty droplets).
-
-#### 🔹 `total_counts`
-
-* **Definition**: Total **number of counts (UMIs or reads)** in a cell.
-* **Use**: Indicates cell complexity or sequencing depth. Very low values may indicate damaged cells or low capture.
-
-#### 🔹 `pct_counts_mt`
-
-* **Definition**: Percentage of counts from **mitochondrial genes** (e.g., genes starting with `mt-` in mouse or `MT-` in human).
-* **Use**: High percentages may indicate **cell stress or apoptosis**; often used to filter out low-quality cells.
-
----
-
-
-
 ![Before Filtering QC metrics](figures/violin_QC.png)  
 Violin plots displaying quality control metrics such as number of genes detected per cell, total counts, and percentage of mitochondrial gene expression.
 
@@ -174,6 +148,79 @@ then we reclustered and replot the marker genes as below:
 | control_2mo         | 8,674      |
 
 ---
+
+## Doublet Detection with Scrublet
+
+We are using **Scrublet**, a Python-based tool, to identify and remove potential doublets from our single-cell RNA-seq dataset.
+
+## Understanding Doublet Scores in Scrublet
+
+**Doublet scores in Scrublet** quantify how likely each cell is to be a **doublet**, based on how similar its gene expression profile is to simulated doublets.
+
+---
+
+### 🔍 In Detail
+
+#### What is a Doublet?
+
+A **doublet** occurs when **two cells are captured in the same droplet** during single-cell RNA sequencing. Their RNA is sequenced as if it's from one cell, producing a mixed transcriptome. This can distort downstream analyses such as clustering, dimensionality reduction, and marker gene identification.
+
+---
+
+### How Scrublet Works
+
+1. **Simulates Doublets**  
+   Scrublet generates **synthetic doublets** by randomly combining gene expression profiles from real cells.
+
+2. **Embedding**  
+   It runs **PCA** on both the real and synthetic cells to embed them in the same low-dimensional space.
+
+3. **Scoring**  
+   For each real cell, Scrublet calculates a **doublet score** based on its **proximity to simulated doublets** in PCA space.
+
+---
+
+### Interpreting the Scores
+
+- **Doublet score range**: Typically between **0 and 1**.
+- **High score (~0.5–1.0)**:  
+  The cell is very similar to simulated doublets → likely a **true doublet**.
+- **Low score (~0–0.2)**:  
+  The cell resembles real singlets → likely a **true singlet**.
+
+---
+
+### Threshold for Calling Doublets
+
+Scrublet tries to automatically find a **threshold** where the doublet score distribution separates singlets from doublets. We can:
+
+-  Let Scrublet pick the threshold automatically (default)
+- ✏️ Manually adjust the threshold based on score distribution plots
+
+
+## Doublet Scores Distribution  
+
+<img src="figures/doublet_score_histogram.png" width="550"/>
+
+
+## Doublet vs Singlet UMAP using default threshold = 0.4  
+
+<img src="figures/umap_doubletStatus.png" width="550"/>
+
+## Doublet vs Singlet UMAP using threshold = 0.1 
+
+<img src="figures/umap_doubletStatus0.1.png" width="550"/>
+
+
+## Doublet vs Singlet UMAP using threshold = 0.18 
+
+<img src="figures/umap_doubletStatus0.18.png" width="550"/>
+
+
+## Doublet vs Singlet UMAP using threshold = 0.15 
+
+<img src="figures/umap_doubletStatus0.15.png" width="550"/>
+
 
 ## Doublet Detection using `DoubletDetection`
 
@@ -341,8 +388,7 @@ adata = adata[
 | 27  | Monocyte           |
 | 32  | Astrocyte          |
 | 33  | Smooth muscle cells|
-| 15  | Likely doublets?   |
-| 24  | Likely doublets?   |
+
 
 ### Then reCluster 
 
