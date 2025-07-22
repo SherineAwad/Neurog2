@@ -50,18 +50,9 @@ remaining_clusters = adata.obs['leiden'].unique().tolist()
 remaining_clusters.sort()  # Optional: sort for easier reading
 print("Remaining cluster IDs:", remaining_clusters)
 
-# Remove cells with all-zero gene expression
-#adata = adata[adata.X.sum(axis=1) > 0].copy()
 
 ## Filter genes with zero counts in all cells
 sc.pp.filter_genes(adata, min_cells=1)
-
-# Normalize total counts per cell to 10,000 and log-transform
-#sc.pp.normalize_total(adata, target_sum=1e4)
-#sc.pp.log1p(adata)
-
-# Identify highly variable genes
-#sc.pp.highly_variable_genes(adata, flavor='seurat', n_top_genes=2000)
 
 ## Scale
 sc.pp.scale(adata)
@@ -72,10 +63,11 @@ sc.tl.pca(adata) #, svd_solver='arpack')
 # Recompute neighborhood graph
 sc.pp.neighbors(adata)  #, n_neighbors=10, n_pcs=40)
 
+resol = 1.4 
 # Reclustering
-sc.tl.leiden(adata,flavor="igraph", n_iterations=2,  resolution=2.4)
+sc.tl.leiden(adata,flavor="igraph", n_iterations=2,  resolution=resol)
 
-sc.pl.umap(adata, color=["leiden"], save=f"_reClustered_{base_name}.png", legend_loc="on data")
+sc.pl.umap(adata, color=["leiden"], save=f"_reClustered_{base_name}_{resol}res.png", legend_loc="on data")
 
 marker_genes = [line.strip() for line in open(markers)]
 
@@ -89,6 +81,23 @@ for gene in marker_genes:
             basis='umap',
             save=f"_reClustered_{base_name}_{gene}.png"
         )
+
+
+
+marker_genes  = {
+    "MG": ["Rlbp1","Gfap","Apoe","Notch1","Pax6","Slc1a3","Vim"],
+    "Rod": ["Rho","Nrl","Crx","Rom1"],
+    "Cones": ["Opn1mw","Opn1sw","Arr3","Thrb","Gnat2"],
+    "BC": ["Vsx1", "Sebox","Bhlhe23","Cabp5","Vsx1","Pcp4","Isl1"] ,
+    "AC": ["Gad1","Gad2","Slc6a9","Tfap2b","Prox1","Pax6","Calb2","Pcp4","Elavl3","Isl1"],
+    "HC": ["Lhx1","Cbln4","Calb1","Nefl","Nefm", "Onecut1", "Onecut2"],
+    "RGC": ["Nefl","Nefm","Sncg","Thy1","Ebf3","Rbfox3","Isl1","Isl2","Pou4f1","Pou4f3","Rbpms"],
+    "Microglia": ["Ptprc","Csf2rb","Sall1"],
+    "Astrocytes":["Pax2","Igf2", "Gfap"]
+    }
+sc.pl.dotplot(adata, marker_genes, groupby="leiden", standard_scale="var", save=f"_reClustered_{base_name}_markerGenes.png")
+
+
 
 adata.obs_names_make_unique()
 adata.write(newObject, compression="gzip")

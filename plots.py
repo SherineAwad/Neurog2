@@ -16,6 +16,9 @@ base_name = os.path.splitext(os.path.basename(myObject))[0]
 newObject = "reclustered_" + base_name + ".h5ad"
 
 adata = sc.read(myObject)
+print(adata.obs.columns)
+print(adata.obs.head())
+list(adata.obs.columns)
 
 '''
 cell_counts = adata.obs['sample'].value_counts()
@@ -62,12 +65,12 @@ for sample in samples:
     )
 
     # Validate required columns
-if 'renamed_samples' not in adata.obs or 'celltype' not in adata.obs:
-    raise ValueError("Your .h5ad file must contain 'renamed_samples' and 'celltype' in .obs")
+if 'sample' not in adata.obs or 'celltype' not in adata.obs:
+    raise ValueError("Your .h5ad file must contain 'sample' and 'celltype' in .obs")
 
 # Create dataframe of counts
 df = (
-    adata.obs[['celltype', 'renamed_samples']]
+    adata.obs[['celltype', 'sample']]
     .value_counts()
     .reset_index(name='count')
 )
@@ -76,7 +79,7 @@ df = (
 df['fraction'] = df['count'] / df.groupby('celltype')['count'].transform('sum')
 
 # Pivot for plotting
-pivot_df = df.pivot(index='celltype', columns='renamed_samples', values='fraction').fillna(0)
+pivot_df = df.pivot(index='celltype', columns='sample', values='fraction').fillna(0)
 
 # Plot
 ax = pivot_df.plot(kind='bar', stacked=True, figsize=(12, 6), colormap='tab20')

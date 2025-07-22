@@ -488,6 +488,16 @@ adata = adata[
 ![legend_annotations](figures/umapreclustered_refined_doubletsRemoved_threshold0.8_neurog2_annotations.png)
 ![ON_annotations](figures/umapreclustered_refined_doubletsRemoved_threshold0.8_neurog2_annotationsON.png)
 
+
+## UMAP per sample 
+![Control](figures/umap_reclustered_control_2mo.png)
+![Neurog2_9S1_2mo](figures/umap_reclustered_Neurog2_9SA_2mo.png)
+![Neurog2_9SA_5weeks](figures/umap_reclustered_Neurog2_9SA_5weeks.png)
+
+## Cell Ratio 
+
+![CellRatio](figures/Restacked_bar_celltype_by_sample.png)
+
 ## How to run Snakemake 
 
 For dry run to check everything before actual run:
