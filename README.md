@@ -487,6 +487,7 @@ adata = adata[
 ![Control](figures/umap_reclustered_control_2mo.png)
 ![Neurog2_9SA_5weeks](figures/umap_reclustered_Neurog2_9SA_5weeks.png)
 ![Neurog2_9S1_2mo](figures/umap_reclustered_Neurog2_9SA_2mo.png)
+![ALl]( umapreclustered_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.png)
 
 ## Cell Ratio 
 
