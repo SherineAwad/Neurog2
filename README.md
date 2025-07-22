@@ -419,9 +419,8 @@ adata = adata[
 
 ### Different resolutions 
 
-#### Resolution = 1.0 
-![UMAP resolution 1](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_1.0res.png)
-
+#### Resolution = 1.4
+![UMAP resolution 1.4](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_1.4res.png)
 
 #### Resolution = 2.0
 ![UMAP resoultion 2.0](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_2.0res.png)
@@ -441,8 +440,9 @@ adata = adata[
 #### Resolution = 4.0
 ![UMAP resoultion 4.0](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_4.0res.png)
 
+### We will stick to resolution 1.4 
 
-### UMAP of marker genes  
+#### UMAP of marker genes  
 
 <img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Abca8a.png" alt="Abca8a" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Guca1b.png" alt="Guca1b" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Pou4f1.png" alt="Pou4f1" width="33%">
 <img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Acta2.png" alt="Acta2" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Hes1.png" alt="Hes1" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Pou4f3.png" alt="Pou4f3" width="33%">
