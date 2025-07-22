@@ -431,12 +431,10 @@ adata = adata[
 #### Resolution = 4.0
 ![UMAP resoultion 4.0](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_4.0res.png)
 
-### We will stick to resolution 1.4 
+### We will stick to resolution 2.0 
 
-#### Resolution = 1.4
-![UMAP resolution 1.4](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_1.4res.png)
-
-
+#### Resolution = 2.0
+![UMAP resolution 2.0](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_2.0res.png)
 
 #### UMAP of marker genes  
 
