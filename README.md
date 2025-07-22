@@ -66,7 +66,7 @@ UMAP plot colored by sample, showing clustering and distribution of single cells
 ![Neurog2_9SA_2mo](figures/umap_sample_Neurog2_9SA_2mo.png)
 ![Neurog2_9SA_5weeks](figures/umap_sample_Neurog2_9SA_5weeks.png)
 
-### 2. Quality Control Violin Plot
+###  Quality Control Violin Plot
 
 
 
@@ -96,7 +96,7 @@ UMAP plot colored by sample, showing clustering and distribution of single cells
 ![Before Filtering QC metrics](figures/violin_QC.png)  
 Violin plots displaying quality control metrics such as number of genes detected per cell, total counts, and percentage of mitochondrial gene expression.
 
-### 3. Additional Analysis Figure
+### Additional Analysis Figure
 ![After Filtering QC metrics](figures/violin_AfterQC.png)  
 
 ## Filtering Criteria
