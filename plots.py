@@ -94,7 +94,6 @@ plt.tight_layout()
 plt.savefig("figures/Restacked_bar_celltype_by_sample.png", dpi=300)
 plt.close()
 
-print("✅ Saved: figures/stacked_bar_celltype_by_sample.png")
 
 
 '''
