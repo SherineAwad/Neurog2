@@ -40,7 +40,6 @@ sc.tl.umap(adata)
 sc.pl.umap(adata, color='sample', size=2, save=f"_{base_name}.png") 
 
 
-
 cell_counts = adata.obs['sample'].value_counts()
 print(cell_counts)
 

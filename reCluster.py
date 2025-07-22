@@ -4,6 +4,7 @@ import sys
 import scanpy as sc
 import importlib_metadata
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 # Fix importlib.metadata for older Python environments
@@ -28,33 +29,55 @@ adata = sc.read(myObject)
 
 
 # Clusters to remove
-clusters_to_remove = ['7', '8', '18', '27', '32', '33']
+clusters_to_remove = ['15','24','7', '8', '18', '27', '32', '33']
 # Check for clustering column
 if 'leiden' not in adata.obs:
     raise ValueError("No 'leiden' column found in .obs. Please ensure clustering was previously run.")
 
+#Print cluster ID before removal 
+
+original_clusters = adata.obs['leiden'].unique().tolist()
+original_clusters.sort()  # Optional: sort for easier reading
+print("Original cluster IDs:", original_clusters)
+
 # Filter out unwanted clusters
 initial_cells = adata.n_obs
 adata = adata[~adata.obs['leiden'].isin(clusters_to_remove)].copy()
+
+
+# Print remaining cluster IDs
+remaining_clusters = adata.obs['leiden'].unique().tolist()
+remaining_clusters.sort()  # Optional: sort for easier reading
+print("Remaining cluster IDs:", remaining_clusters)
+
+# Remove cells with all-zero gene expression
+#adata = adata[adata.X.sum(axis=1) > 0].copy()
+
+## Filter genes with zero counts in all cells
+sc.pp.filter_genes(adata, min_cells=1)
+
+# Normalize total counts per cell to 10,000 and log-transform
+#sc.pp.normalize_total(adata, target_sum=1e4)
+#sc.pp.log1p(adata)
+
+# Identify highly variable genes
+#sc.pp.highly_variable_genes(adata, flavor='seurat', n_top_genes=2000)
+
 ## Scale
-sc.pp.scale(adata, max_value=10)
+sc.pp.scale(adata)
 
 # Recompute PCA on filtered data
-sc.tl.pca(adata, svd_solver='arpack')
+sc.tl.pca(adata) #, svd_solver='arpack')
 
 # Recompute neighborhood graph
-sc.pp.neighbors(adata, n_neighbors=10, n_pcs=40)
+sc.pp.neighbors(adata)  #, n_neighbors=10, n_pcs=40)
 
 # Reclustering
-sc.tl.leiden(adata, resolution=1.0)
+sc.tl.leiden(adata,flavor="igraph", n_iterations=2,  resolution=2.4)
 
 sc.pl.umap(adata, color=["leiden"], save=f"_reClustered_{base_name}.png", legend_loc="on data")
 
-
-
-
 marker_genes = [line.strip() for line in open(markers)]
-
 
 # Save individual plots for each gene
 for gene in marker_genes:
