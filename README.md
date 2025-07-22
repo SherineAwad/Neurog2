@@ -277,15 +277,15 @@ The results were visualized using UMAP, colored by both prediction and score:
 
 ###  Understanding `doublet_score` Thresholds
 
-The `doublet_score` typically ranges from **0 to 1**, where **higher values indicate a higher probability of a cell being a doublet**.
+The `doublet_score` typically ranges from **0 to 1**
 
 Your filter in the code:
 
 ```python
-combined_adata = combined_adata[combined_adata.obs['doublet_score'] >= threshold]
+combined_adata = combined_adata[combined_adata.obs['doublet_score'] <= threshold]
 ```
 
-This means you're **keeping** cells with `doublet_score >= threshold`.
+This means you're **keeping** cells with `doublet_score <= threshold`.
 
 
 ###  Interpretation of Threshold:
