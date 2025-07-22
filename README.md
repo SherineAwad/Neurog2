@@ -420,7 +420,7 @@ adata = adata[
 ### Different resolutions 
 
 #### Resolution = 1.0 
-![UMAP resolution 1](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2.png)
+![UMAP resolution 1](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_1.0res.png)
 
 
 #### Resolution = 2.0
@@ -476,6 +476,12 @@ adata = adata[
 <img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Glul.png" alt="Glul" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Pdgfra.png" alt="Pdgfra" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Vim.png" alt="Vim" width="33%">
 <img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Gnat2.png" alt="Gnat2" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Pecam1.png" alt="Pecam1" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Vsx1.png" alt="Vsx1" width="33%">
 <img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Grm6.png" alt="Grm6" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Vsx2.png" alt="Vsx2" width="33%">
+
+
+### Dot plot for major celltypes and marker genes 
+
+
+![Dot Plot](figures/dotplot__reClustered_refined_doubletsRemoved_threshold0.8_neurog2_markerGenes.png)
 
 ## Annotations 
 
