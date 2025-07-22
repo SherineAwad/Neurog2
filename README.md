@@ -442,6 +442,11 @@ adata = adata[
 
 ### We will stick to resolution 1.4 
 
+#### Resolution = 1.4
+![UMAP resolution 1.4](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_1.4res.png)
+
+
+
 #### UMAP of marker genes  
 
 <img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Abca8a.png" alt="Abca8a" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Guca1b.png" alt="Guca1b" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Pou4f1.png" alt="Pou4f1" width="33%">
