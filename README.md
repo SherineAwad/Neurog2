@@ -388,8 +388,8 @@ adata = adata[
 ### UMAP per Sample 
 
 ![Control 2mo](figures/umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_control_2mo.png)
-![Neurog2_9SA_2mo](figures/umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_Neurog2_9SA_2mo.png)
 ![Neurog2_9SA_5weeks](figures/umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_Neurog2_9SA_5weeks.png)
+![Neurog2_9SA_2mo](figures/umap_refined_refined_doubletsRemoved_threshold0.8_neurog2_Neurog2_9SA_2mo.png)
 
 
 
@@ -487,13 +487,10 @@ adata = adata[
 
 ## UMAP per sample 
 ![Control](figures/umap_reclustered_control_2mo.png)
-![Neurog2_9S1_2mo](figures/umap_reclustered_Neurog2_9SA_2mo.png)
 ![Neurog2_9SA_5weeks](figures/umap_reclustered_Neurog2_9SA_5weeks.png)
+![Neurog2_9S1_2mo](figures/umap_reclustered_Neurog2_9SA_2mo.png)
 
 ## Cell Ratio 
-
-![CellRatio](figures/Restacked_bar_celltype_by_sample.png)
-
 
 ![CellRatio Reversed](figures/Reversed_stacked_bar_sample_by_celltype.png)
 
