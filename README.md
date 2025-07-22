@@ -417,9 +417,32 @@ adata = adata[
 
 ### Then reCluster 
 
-![UMAP after reClustering](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2.png)
+### Different resolutions 
 
-### UMAP of marker genes 
+#### Resolution = 1.0 
+![UMAP resolution 1](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2.png)
+
+
+#### Resolution = 2.0
+![UMAP resoultion 2.0](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_2.0res.png)
+
+#### Resolution = 2.5
+![UMAP resoultion 2.5](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_2.5res.png)
+
+
+#### Resolution = 3.0
+![UMAP resoultion 3.0](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_3.0res.png)
+
+
+#### Resolution = 3.5
+![UMAP resoultion 3.5](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_3.5res.png)
+
+
+#### Resolution = 4.0
+![UMAP resoultion 4.0](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_4.0res.png)
+
+
+### UMAP of marker genes  
 
 <img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Abca8a.png" alt="Abca8a" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Guca1b.png" alt="Guca1b" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Pou4f1.png" alt="Pou4f1" width="33%">
 <img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Acta2.png" alt="Acta2" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Hes1.png" alt="Hes1" width="33%"><img src="figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Pou4f3.png" alt="Pou4f3" width="33%">
