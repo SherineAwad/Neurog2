@@ -200,19 +200,19 @@ Below are the UMAP visualizations of marker gene expression across clusters. The
 
 <img src="figures/qc_violin_by_cluster.png" width="550"/>
 
-### 5. Removing low quality clustering and Reclustering 
+###  Removing low quality clustering and Reclustering 
 
 We removed low quality clusters number:  ['7', '8', '11', '20', '28', '33', '34']
 
 then we reclustered and replot the marker genes as below: 
 
 
-## UMAP
+### UMAP
 
 ![UMAP RE CLUSTERS](figures/umap_reClusters.png) 
 
 
-## Per sample UMAP 
+### Per sample UMAP 
 
 ![Control 2mo](figures/umap_reclustered_control_2mo.png)
 ![Neurog2_9SA_2mo](figures/umap_reclustered_Neurog2_9SA_2mo.png)
@@ -305,14 +305,14 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 
 
 
-## Doublet Removal at Threshold 0.9 
+### Doublet Removal at Threshold 0.9 
 
 
-## UMAP after  clustering 
+### UMAP after  clustering 
 
 ![Doublet Detection](figures/umap_clustered_ddanalysed_doubletScores_0.9_neurog2_ddClusters.png) 
 
-## UMAP after doublet removal at threshold 0.9 
+### UMAP after doublet removal at threshold 0.9 
  
 ![Doublet Removal](figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_doubletsRemoved_threshold0.9_clusters.png)
 
@@ -339,13 +339,13 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 <img src="figures/umap_doubletsRemoved_threshold0.9_clustered_ddanalysed_doubletScores_0.9_neurog2_threshold0.9_Malat1.png" alt="Malat1" width="33%">
 
 
-## Doublet removal using 0.8 threshold 
+### Doublet removal using 0.8 threshold 
 
-## UMAP after  clustering 
+### UMAP after  clustering 
 
 ![Doublet Detection](figures/umap_clustered_ddanalysed_doubletScores_0.8_neurog2_ddClusters.png)
 
-## UMAP after doublet removal at threshold 0.8 
+### UMAP after doublet removal at threshold 0.8 
 
 ![Doublet Removal](figures/umap_doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_neurog2_doubletsRemoved_threshold0.8_clusters.png)
 
