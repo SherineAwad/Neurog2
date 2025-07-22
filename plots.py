@@ -95,6 +95,54 @@ plt.savefig("figures/Restacked_bar_celltype_by_sample.png", dpi=300)
 plt.close()
 
 
+import scanpy as sc
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Sanitize sample column just in case
+adata.obs['sample'] = adata.obs['sample'].str.strip()
+
+# Create dataframe of counts
+df = (
+    adata.obs[['celltype', 'sample']]
+    .value_counts()
+    .reset_index(name='count')
+)
+
+# Normalize to get proportions *per sample*
+df['fraction'] = df['count'] / df.groupby('sample')['count'].transform('sum')
+
+# Pivot for plotting: index = sample, columns = celltype
+pivot_df = df.pivot(index='sample', columns='celltype', values='fraction').fillna(0)
+
+# Print available sample names to confirm
+print("✅ Available sample names:", pivot_df.index.tolist())
+
+# Manually order samples based on actual names
+sample_order = ['control_2mo', 'Neurog2_9SA_5weeks', 'Neurog2_9SA_2mo']  # <-- Adjust if needed
+
+# Reorder rows if all sample names are present
+missing_samples = [s for s in sample_order if s not in pivot_df.index]
+if missing_samples:
+    raise ValueError(f"⚠️ Sample(s) not found in data: {missing_samples}")
+pivot_df = pivot_df.loc[sample_order]
+
+# Plot
+ax = pivot_df.plot(kind='bar', stacked=True, figsize=(12, 6), colormap='tab20')
+plt.ylabel("Fraction of cells")
+plt.xlabel("Sample")
+plt.title("Cell Type Contribution per Sample")
+plt.xticks(rotation=45, ha='right')
+plt.legend(title='Cell Type', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+
+# Save figure
+plt.savefig("figures/Reversed_stacked_bar_sample_by_celltype.png", dpi=300)
+plt.close()
+
+
+
+
 
 '''
 umap_fig_name = base_name + "_umap_doublets.png"

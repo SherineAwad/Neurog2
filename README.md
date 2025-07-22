@@ -1,6 +1,6 @@
 # Neurog2 Project - scRNA-seq Analysis
 
-This project focuses on the single-cell RNA sequencing (scRNA-seq) analysis of samples related to **Neurog2** expression at different developmental stages and controls. The goal is to understand the cellular heterogeneity and transcriptional changes associated with Neurog2 in specific neuronal populations.
+This project focuses on the single-cell RNA sequencing (scRNA-seq) analysis of samples related to **Neurog2** expression at different stages and control. The goal is to study how MG cells develope to other cells. 
 
 ## Samples
 
@@ -502,6 +502,9 @@ adata = adata[
 ## Cell Ratio 
 
 ![CellRatio](figures/Restacked_bar_celltype_by_sample.png)
+
+
+![CellRatio Reversed](figures/Reversed_stacked_bar_sample_by_celltype.png)
 
 ## How to run Snakemake 
 
