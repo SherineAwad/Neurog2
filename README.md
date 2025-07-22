@@ -14,12 +14,44 @@ This project focuses on the single-cell RNA sequencing (scRNA-seq) analysis of s
 
 The analysis was performed using [Scanpy](https://scanpy.readthedocs.io/en/stable/), a scalable toolkit for analyzing single-cell gene expression data. The workflow included:
 
-- Reading and normalizing raw data
-- Identifying highly variable genes
-- Scaling data
-- Performing PCA and neighborhood graph calculation
-- Computing UMAP embeddings for visualization
-- Quality control and visualization
+
+### Preprocessing 
+
+1. **Merge Multiple Datasets**
+   Multiple `AnnData` objects are combined into one using their sample names as labels. This enables joint analysis while preserving sample identity.
+
+2. **Identify Mitochondrial Genes**
+   Genes that start with `"mt-"` are flagged as mitochondrial genes, which are important indicators of cell stress or damage.
+
+3. **Calculate Quality Control (QC) Metrics**
+   Standard QC metrics are computed for each cell:
+
+   * `n_genes_by_counts`: Number of genes detected
+   * `total_counts`: Total number of transcripts
+   * `pct_counts_mt`: Percent of transcripts from mitochondrial genes
+
+4. **Visualize QC Metrics (Before Filtering)**
+   Violin plots are used to visualize the distribution of these metrics to help identify low-quality cells.
+
+5. **Filter Out Low-Quality Cells**
+   Cells are removed if they have:
+
+   * Too few or too many detected genes (e.g. <800 or >8000)
+   * Extremely low or high total transcript counts
+   * High mitochondrial content (e.g. >25%), indicating cell stress
+
+6. **Further Filtering**
+
+   * Cells with fewer than 100 genes are removed
+   * Genes found in fewer than 3 cells are excluded
+
+7. **Visualize QC Metrics (After Filtering)**
+   Another set of violin plots is generated to assess the impact of filtering on the dataset.
+
+8. **Save the Processed Data**
+   The cleaned and filtered data is saved as an `.h5ad` file for downstream analysis.
+
+---
 
 ## Figures
 
@@ -88,9 +120,53 @@ This filtering step ensures removal of dead or dying cells and technical artifac
 
 
 
-### 4. Clustering 
+## Clustering 
 
-## Marker Gene UMAP Plots
+
+1. **Load the Data**
+   A preprocessed `AnnData` object is loaded from disk.
+
+2. **Normalize and Transform**
+
+   * Normalize gene expression values so that each cell has a total of 10,000 counts.
+   * Apply a logarithmic transformation to stabilize variance across genes.
+
+3. **Feature Selection**
+
+   * Identify the top 2,000 highly variable genes using the Seurat method. These are the most informative genes for downstream analysis.
+
+4. **Scale the Data**
+
+   * Standardize the expression values (mean = 0, variance = 1).
+   * Clip extreme values to a maximum of 10 to reduce the impact of outliers.
+
+5. **Dimensionality Reduction (PCA)**
+
+   * Perform Principal Component Analysis to reduce data dimensionality and denoise the dataset.
+
+6. **Construct the Neighborhood Graph**
+
+   * Build a k-nearest neighbors graph based on PCA to capture the local structure of the data.
+
+7. **UMAP Embedding**
+
+   * Compute a 2D UMAP embedding for visualization of the dataset’s structure.
+
+8. **Visualize UMAP by Sample**
+
+   * Generate a UMAP plot where cells are colored by their sample origin.
+   * Count how many cells belong to each sample.
+
+9. **Per-Sample UMAP Plots**
+
+   * Loop through each sample and generate a separate UMAP plot showing only the cells from that sample.
+
+10. **Visualize Predicted Doublets**
+
+* Plot a UMAP colored by predicted doublet labels and doublet scores to inspect doublet detection results.
+
+
+### Marker Gene UMAP Plots
 Below are the UMAP visualizations of marker gene expression across clusters. These are auto-generated from your data and saved in the figures/ directory.
 
 
@@ -120,7 +196,7 @@ Below are the UMAP visualizations of marker gene expression across clusters. The
 
 
 
-## QC per Clsuter 
+### QC per Clsuter 
 
 <img src="figures/qc_violin_by_cluster.png" width="550"/>
 
@@ -161,7 +237,7 @@ then we reclustered and replot the marker genes as below:
 
 
 
-## QC per Cluster 
+### QC per Cluster 
 
 <img src="figures/qc_violin_by_reCluster.png" width="550"/>
 
@@ -219,11 +295,11 @@ This means you're **keeping** cells with `doublet_score >= threshold`.
 
 ###  Interpretation of Threshold:
 
-* **Higher threshold** (e.g., `0.9`) → **Stricter filtering**
+* **Higher threshold** (e.g., `0.9`)
   🔹 You keep **more** cells
   🔹 Less doublets are removed
 
-* **Lower threshold** (e.g., `0.4`) → **More relaxed filtering**
+* **Lower threshold** (e.g., `0.4`) 
   🔹 You keep **fewer** cells
   🔹 More potential doublets are removed 
 
