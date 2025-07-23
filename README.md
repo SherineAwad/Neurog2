@@ -88,9 +88,6 @@ UMAP plot colored by sample, showing clustering and distribution of single cells
 ![Before Filtering QC metrics](figures/violin_QC.png)  
 Violin plots displaying quality control metrics such as number of genes detected per cell, total counts, and percentage of mitochondrial gene expression.
 
-### Additional Analysis Figure
-![After Filtering QC metrics](figures/violin_AfterQC.png)  
-
 ## Filtering Criteria
 
 Quality filtering was applied to remove low-quality cells and potential doublets. Cells were retained only if they met all the following criteria:
@@ -100,6 +97,10 @@ Quality filtering was applied to remove low-quality cells and potential doublets
 - Percentage of mitochondrial gene counts less than **25%**
 
 This filtering step ensures removal of dead or dying cells and technical artifacts to improve downstream analysis quality.
+
+
+### Additional Analysis Figure
+![After Filtering QC metrics](figures/violin_AfterQC.png)  
 
 
 ## Number of cells per sample 
@@ -161,7 +162,14 @@ This filtering step ensures removal of dead or dying cells and technical artifac
 Below are the UMAP visualizations of marker gene expression across clusters. These are auto-generated from your data and saved in the figures/ directory.
 
 
+### Initial Clustering 
+
 ![UMAP CLUSTERS](figures/umap_clusters.png)
+
+
+### Marker Gene UMAP Plots
+Below are the UMAP visualizations of marker gene expression across clusters. These are auto-generated from your data and saved in the figures/ directory.
+
 
 <img src="figures/umapclustered_analysed_neurog2_Malat1.png" alt="Malat1" width="33%"><img src="figures/umapclustered_analysed_neurog2_mt-Atp6.png" alt="mt-Atp6" width="33%"><img src="figures/umapclustered_analysed_neurog2_Sox9.png" alt="Sox9" width="33%">
 
@@ -191,9 +199,17 @@ Below are the UMAP visualizations of marker gene expression across clusters. The
 
 <img src="figures/qc_violin_by_cluster.png" width="550"/>
 
-###  Removing low quality clustering and Reclustering 
+### Remove clusters 
 
-We removed low quality clusters number:  ['7', '8', '11', '20', '28', '33', '34']
+| ID | Cell Type           |
+|-----|--------------------|
+| 7   | Bad Cells          |
+| 8   | Microglia          |
+| 11  | Bad Cells          |
+| 20  | Microglia          |
+| 28  | Monocyte           |
+| 33  | RPE/Pax2           |
+| 34  | SMC                |
 
 then we reclustered and replot the marker genes as below: 
 
