@@ -63,44 +63,10 @@ for sample in samples:
         save=f"_reclustered_{sample}.png",
         show=False
     )
+# Plot UMAP colored by sample
+sc.pl.umap(adata, color='sample', size=2, save=f"reclustered_{base_name}.png")
 
-    # Validate required columns
-if 'sample' not in adata.obs or 'celltype' not in adata.obs:
-    raise ValueError("Your .h5ad file must contain 'sample' and 'celltype' in .obs")
-
-# Create dataframe of counts
-df = (
-    adata.obs[['celltype', 'sample']]
-    .value_counts()
-    .reset_index(name='count')
-)
-
-# Normalize to get proportions *per cell type*
-df['fraction'] = df['count'] / df.groupby('celltype')['count'].transform('sum')
-
-# Pivot for plotting
-pivot_df = df.pivot(index='celltype', columns='sample', values='fraction').fillna(0)
-
-# Plot
-ax = pivot_df.plot(kind='bar', stacked=True, figsize=(12, 6), colormap='tab20')
-plt.ylabel("Fraction of cells")
-plt.xlabel("Cell Type")
-plt.title("Sample contribution per Cell Type")
-plt.xticks(rotation=45, ha='right')
-plt.legend(title='Sample', bbox_to_anchor=(1.05, 1), loc='upper left')
-plt.tight_layout()
-
-# Save figure
-plt.savefig("figures/Restacked_bar_celltype_by_sample.png", dpi=300)
-plt.close()
-
-
-import scanpy as sc
-import pandas as pd
 import matplotlib.pyplot as plt
-
-# Sanitize sample column just in case
-adata.obs['sample'] = adata.obs['sample'].str.strip()
 
 # Create dataframe of counts
 df = (
@@ -119,16 +85,34 @@ pivot_df = df.pivot(index='sample', columns='celltype', values='fraction').filln
 print("✅ Available sample names:", pivot_df.index.tolist())
 
 # Manually order samples based on actual names
-sample_order = ['control_2mo', 'Neurog2_9SA_5weeks', 'Neurog2_9SA_2mo']  # <-- Adjust if needed
-
-# Reorder rows if all sample names are present
+sample_order = ['control_2mo', 'Neurog2_9SA_5weeks', 'Neurog2_9SA_2mo']  # Adjust as needed
 missing_samples = [s for s in sample_order if s not in pivot_df.index]
 if missing_samples:
     raise ValueError(f"⚠️ Sample(s) not found in data: {missing_samples}")
 pivot_df = pivot_df.loc[sample_order]
 
+# Manually reorder columns to desired celltype order
+celltype_order = ['MG', 'MGPC', 'BC', 'AC', 'Rod', 'Cones']
+missing_celltypes = [ct for ct in celltype_order if ct not in pivot_df.columns]
+if missing_celltypes:
+    raise ValueError(f"⚠️ Cell type(s) not found in data: {missing_celltypes}")
+pivot_df = pivot_df[celltype_order]
+
+# Define custom colors matching your UMAP plot
+celltype_colors = {
+    'AC': '#1f77b4',       # Blue
+    'BC': '#ff7f0e',       # Orange
+    'Cones': '#2ca02c',    # Green
+    'MG': '#d62728',       # Red
+    'MGPC': '#9467bd',     # Purple
+    'Rod': '#8c564b'       # Brown
+}
+
+# Extract colors in order
+colors = [celltype_colors[ct] for ct in celltype_order]
+
 # Plot
-ax = pivot_df.plot(kind='bar', stacked=True, figsize=(12, 6), colormap='tab20')
+ax = pivot_df.plot(kind='bar', stacked=True, figsize=(12, 6), color=colors)
 plt.ylabel("Fraction of cells")
 plt.xlabel("Sample")
 plt.title("Cell Type Contribution per Sample")
@@ -139,7 +123,6 @@ plt.tight_layout()
 # Save figure
 plt.savefig("figures/Reversed_stacked_bar_sample_by_celltype.png", dpi=300)
 plt.close()
-
 
 
 

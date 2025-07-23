@@ -63,7 +63,7 @@ sc.tl.pca(adata) #, svd_solver='arpack')
 # Recompute neighborhood graph
 sc.pp.neighbors(adata)  #, n_neighbors=10, n_pcs=40)
 
-resol = 1.4 
+resol = 2.0 
 # Reclustering
 sc.tl.leiden(adata,flavor="igraph", n_iterations=2,  resolution=resol)
 

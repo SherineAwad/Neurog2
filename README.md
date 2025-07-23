@@ -535,7 +535,12 @@ For Actual run:
 
 ## TO DO
 
-= Gene Expression Analysis 
+#### Gene Expression Analysis 
+
+##### Preliminary 
+ 
+
+![HEATMAP EXPRESSION](figures/heatmap_heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top3Genes_all_clusters.png)
 
 ## References
 
