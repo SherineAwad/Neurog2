@@ -265,7 +265,7 @@ After running `DoubletDetection`, predicted doublets and doublet scores were sto
 
 The results were visualized using UMAP, colored by both prediction and score:
 
-###  DoubletDetection Workflow (Markdown Format)
+###  DoubletDetection Workflow
 
 ####  Data Preprocessing
 - Input is a raw (or filtered) gene expression matrix.
