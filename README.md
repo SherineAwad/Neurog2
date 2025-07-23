@@ -27,7 +27,7 @@ The analysis was performed using [Scanpy](https://scanpy.readthedocs.io/en/stabl
    Standard QC metrics are computed for each cell:
 
    * `n_genes_by_counts`: Number of genes detected
-   * `total_counts`: Total number of transcripts
+   * `total_counts`: The total number of UMIs observed per cell
    * `pct_counts_mt`: Percent of transcripts from mitochondrial genes
 
 4. **Visualize QC Metrics (Before Filtering)**
