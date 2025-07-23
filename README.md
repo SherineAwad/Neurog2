@@ -523,6 +523,19 @@ adata = adata[
 
 ![CellRatio Reversed](figures/Reversed_stacked_bar_sample_by_celltype.png)
 
+
+## TO DO
+
+#### Gene Expression Analysis 
+
+##### Preliminary 
+
+
+![HEATMAP EXPRESSION](figures/heatmap_heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top3Genes_all_clusters.png)
+
+##### Tweak figures colors and size 
+
+
 ## How to run Snakemake 
 
 For dry run to check everything before actual run:
@@ -533,14 +546,6 @@ For Actual run:
 
     snakemake -j1 -p --configfile config.yaml
 
-## TO DO
-
-#### Gene Expression Analysis 
-
-##### Preliminary 
- 
-
-![HEATMAP EXPRESSION](figures/heatmap_heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top3Genes_all_clusters.png)
 
 ## References
 
