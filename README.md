@@ -256,14 +256,6 @@ The results were visualized using UMAP, colored by both prediction and score:
    ![Doublets Thresholds](figures/threshold_test.png)
    ![Doublets Conversion](figures/convergence_test.png)
 
-
-### Doublet Scores and Conversion using threshold 0.9 
-
-![Doublet Prediction](figures/umap_ddanalysed_doubletScores_0.9_neurog2_doublets.png)
-![Doublet Thresholds](figures/0.9threshold_test.png)
-![Doublet Conversion](figures/0.9conversion_test.png)
-
-
 ---
 
 ###  Understanding `doublet_score` Thresholds
@@ -288,7 +280,6 @@ This means you're **keeping** cells with `doublet_score <= threshold`.
 * **Lower threshold** (e.g., `0.4`) 
   🔹 You keep **fewer** cells
   🔹 More potential doublets are removed 
-
 
 
 ### Doublet Removal at Threshold 0.9 
