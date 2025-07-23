@@ -290,13 +290,12 @@ The results were visualized using UMAP, colored by both prediction and score:
 - Applies a threshold (user-defined or default) to classify each cell as a **doublet** or **singlet**.
 
 
-### Doublet Scores and Conversion using default threshold 0.5
+### Doublet Scores and Conversion
 
    ![UMAP](figures/umap_doubletScores_neurog2_doublets.png)
    ![Doublets Thresholds](figures/threshold_test.png)
    ![Doublets Conversion](figures/convergence_test.png)
 
----
 
 ###  Understanding `doublet_score` Thresholds
 
@@ -534,6 +533,9 @@ For Actual run:
 
     snakemake -j1 -p --configfile config.yaml
 
+## TO DO
+
+= Gene Expression Analysis 
 
 ## References
 
