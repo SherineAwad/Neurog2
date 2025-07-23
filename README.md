@@ -17,7 +17,7 @@ The analysis was performed using [Scanpy](https://scanpy.readthedocs.io/en/stabl
 
 ### Preprocessing 
 
-1. **Merge Multiple Datasets**
+1. **Merge Multiple Samples**
    Multiple `AnnData` objects are combined into one using their sample names as labels. This enables joint analysis while preserving sample identity.
 
 2. **Identify Mitochondrial Genes**
@@ -255,7 +255,7 @@ then we reclustered and replot the marker genes as below:
 
 ## Doublet Detection using `DoubletDetection`
 
-Unlike `Scrublet`, which can operate effectively on clustered or preprocessed `AnnData` objects, the `DoubletDetection` tool is more sensitive to data structure and expects the **original, unclustered** `AnnData` object. Running it on a processed or subsetted object may yield suboptimal or misleading results.
+A doublet is an artifact where two cells are captured and sequenced together, but incorrectly treated as one. Unlike `Scrublet`, which can operate effectively on clustered or preprocessed `AnnData` objects, the `DoubletDetection` tool is more sensitive to data structure and expects the **original, unclustered** `AnnData` object. Running it on a processed or subsetted object may yield suboptimal or misleading results.
 
 In the workflow, we applied `DoubletDetection` to the original data (`adata`) to ensure it captures the full transcriptomic diversity and avoids artifacts introduced during clustering.
 
@@ -264,6 +264,30 @@ After running `DoubletDetection`, predicted doublets and doublet scores were sto
 - `doublet_score`: Confidence score associated with doublet prediction.
 
 The results were visualized using UMAP, colored by both prediction and score:
+
+###  DoubletDetection Workflow (Markdown Format)
+
+####  Data Preprocessing
+- Input is a raw (or filtered) gene expression matrix.
+- May optionally normalize, filter, and log-transform the data.
+
+####  Synthetic Doublet Generation
+- Creates artificial doublets by randomly pairing real cells.
+- Averages their gene expression profiles to simulate doublets.
+
+####  Clustering with Real + Synthetic Data
+- Combines real and synthetic cells.
+- Performs dimensionality reduction (typically **PCA**).
+- Applies unsupervised clustering (usually **Phenograph**, a graph-based algorithm).
+
+####  Voting Mechanism via Multiple Runs (Ensemble)
+- Repeats the clustering multiple times (default: **50 runs**).
+- Tracks how often each real cell clusters with synthetic doublets.
+- Cells that frequently cluster with synthetic doublets are flagged as potential doublets.
+
+####  Thresholding & Output
+- Assigns a **doublet probability score** to each cell.
+- Applies a threshold (user-defined or default) to classify each cell as a **doublet** or **singlet**.
 
 
 ### Doublet Scores and Conversion using default threshold 0.5
