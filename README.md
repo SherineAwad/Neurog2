@@ -531,7 +531,7 @@ adata = adata[
 ##### Preliminary 
 
 
-![HEATMAP EXPRESSION](figures/heatmap_heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top3Genes_all_clusters.png)
+![HEATMAP EXPRESSION](figures/heatmap_heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top5Genes_all_clusters.png)
 
 ##### Tweak figures colors and size 
 
