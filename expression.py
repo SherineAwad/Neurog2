@@ -26,7 +26,7 @@ adata_unlogged = adata.copy()
 adata_unlogged.X = np.expm1(adata_unlogged.X)  # reverse log1p: exp(x) - 1
 adata_new.raw = adata_unlogged
 
-sc.tl.rank_genes_groups(adata_new, groupby="celltype", method='wilcoxon')
+sc.tl.rank_genes_groups(adata_new, groupby="celltype", method='t-test')
 df_all = sc.get.rank_genes_groups_df(adata_new, group=None)
 print(df_all[['group', 'names', 'logfoldchanges', 'pvals_adj']].head())
 print("Available columns in DE results:", df_all.columns.tolist())
@@ -39,7 +39,7 @@ for group in groups:
     group_df = df_all[df_all['group'] == group].sort_values('logfoldchanges', ascending=False)
     print(group_df[['names', 'logfoldchanges', 'pvals_adj']])
 
-df_all.to_csv(f"ranked_genes_{base_name}_ALL.csv", index=False)
+df_all.to_csv(f"ranked_genes_{base_name}_ALLtt.csv", index=False)
 
 # Get top N genes per group (by absolute logfc or rank)
 top_n = 5
@@ -65,7 +65,7 @@ sc.pl.rank_genes_groups_heatmap(
     n_genes=top_n,
     swap_axes=True,
     use_raw=True,
-    save=f"_{base_name}_Top{top_n}Genes_all_clusters.png"
+    save=f"_{base_name}_Top{top_n}Genes_all_clustertt.png"
 )
 
 adata_new.obs_names_make_unique()
