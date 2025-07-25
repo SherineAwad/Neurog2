@@ -528,7 +528,7 @@ adata = adata[
 
 ![HEATMAP EXPRESSION](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top5Genes_all_clusters.png)
 
-[Gene Expressions](https://docs.google.com/spreadsheets/d/181OKOe7d6Wx_LCX4k9Na1woezQtccuIuF07LhLico8U/edit?usp=sharing)
+[Click here for Gene Expressions](https://docs.google.com/spreadsheets/d/181OKOe7d6Wx_LCX4k9Na1woezQtccuIuF07LhLico8U/edit?usp=sharing)
 
 #### TO DO 
 
