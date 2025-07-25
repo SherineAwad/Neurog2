@@ -56,6 +56,7 @@ for group in groups:
 
 top_genes_combined = list(dict.fromkeys(top_genes_combined))
 print("Top genes for heatmap:", top_genes_combined)
+adata_new.raw = adata  # assuming `adata` holds normalized + log1p
 
 # Plot heatmap
 sc.pl.rank_genes_groups_heatmap(
@@ -63,8 +64,8 @@ sc.pl.rank_genes_groups_heatmap(
     groups=groups,
     n_genes=top_n,
     swap_axes=True,
-    show=True,
-    save=f"_heatmap_{base_name}_Top{top_n}Genes_all_clusters.png"
+    use_raw=True,
+    save=f"_{base_name}_Top{top_n}Genes_all_clusters.png"
 )
 
 adata_new.obs_names_make_unique()
