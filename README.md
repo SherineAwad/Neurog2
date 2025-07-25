@@ -530,14 +530,14 @@ adata = adata[
 
 ![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top5Genes_all_clustertt.png)
 
-[t-test Gene Expressions](https://docs.google.com/spreadsheets/d/19YY4ErDH-bcsntzXxDzc-D7wrKbziCzvH7x4rav1SbQ/edit?usp=sharing)
+**🚨[t-test Gene Expressions](https://docs.google.com/spreadsheets/d/19YY4ErDH-bcsntzXxDzc-D7wrKbziCzvH7x4rav1SbQ/edit?usp=sharing)
 
 
 ### Using default parameters of scanpy which doesn't calculate log foldchange
 
 ![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top5Genes_all_clusters_noExp_default.png)
  
-[Default Parameters Gene Expression](https://docs.google.com/spreadsheets/d/15ME9IKEDl7INO-U6jz7JE6d_yVFePF824eoymJG3QWE/edit?usp=sharing) 
+**🚨[Default Parameters Gene Expression](https://docs.google.com/spreadsheets/d/15ME9IKEDl7INO-U6jz7JE6d_yVFePF824eoymJG3QWE/edit?usp=sharing) 
 
  
 #### TO DO 
