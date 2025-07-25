@@ -8,7 +8,6 @@ import importlib_metadata
 # Fix importlib.metadata for older Python environments
 sys.modules['importlib.metadata'] = importlib_metadata
 
-# Argument parsing
 parser = argparse.ArgumentParser(description="Remove specific clusters and re-cluster")
 parser.add_argument('myObject', help='Path to input AnnData (.h5ad) file')
 args = parser.parse_args()
@@ -17,59 +16,56 @@ myObject = args.myObject
 base_name = os.path.splitext(os.path.basename(myObject))[0]
 newObject = "expression_" + base_name + ".h5ad"
 
+
 adata = sc.read(myObject)
 
-# 1. Check your annotation column
-annotation_col = 'celltype'  # change if different
-if annotation_col not in adata.obs:
-    raise ValueError(f"Column '{annotation_col}' not found in adata.obs")
 
-# 2. Run differential expression analysis
-sc.tl.rank_genes_groups(adata, groupby=annotation_col, method='wilcoxon')
+import numpy as np 
+adata_new = adata.copy()
+adata_unlogged = adata.copy()
+adata_unlogged.X = np.expm1(adata_unlogged.X)  # reverse log1p: exp(x) - 1
+adata_new.raw = adata_unlogged
 
-# 3. Visualize top marker genes per cluster (optional)
-sc.pl.rank_genes_groups(adata, n_genes=20, sharey=False)
+sc.tl.rank_genes_groups(adata_new, groupby="celltype", method='wilcoxon')
+df_all = sc.get.rank_genes_groups_df(adata_new, group=None)
+print(df_all[['group', 'names', 'logfoldchanges', 'pvals_adj']].head())
+print("Available columns in DE results:", df_all.columns.tolist())
 
-# 4. Extract DE results into dict of DataFrames
-result = adata.uns['rank_genes_groups']
-groups = result['names'].dtype.names  # list of clusters/groups
 
-marker_genes = {}
+groups = df_all['group'].unique().tolist()
+# Loop over each group and print all ranked genes sorted by logFC
 for group in groups:
-    marker_genes[group] = pd.DataFrame({
-        'gene': result['names'][group],
-        'logfoldchange': result['logfoldchanges'][group],
-        'pvals_adj': result['pvals_adj'][group],
-        'scores': result['scores'][group]
-    })
+    print(f"\nAll DE genes in group '{group}' sorted by logFC (highest to lowest):")
+    group_df = df_all[df_all['group'] == group].sort_values('logfoldchanges', ascending=False)
+    print(group_df[['names', 'logfoldchanges', 'pvals_adj']])
 
-# 5. Collect top N genes per cluster
-top_n = 3
+df_all.to_csv(f"ranked_genes_{base_name}_ALL.csv", index=False)
+
+# Get top N genes per group (by absolute logfc or rank)
+top_n = 5
 top_genes_combined = []
-for group in groups:
-    top_genes_combined.extend(marker_genes[group]['gene'].values[:top_n].tolist())
-top_genes_combined = list(dict.fromkeys(top_genes_combined))  # unique list, preserve order
 
-# 6. Plot built-in heatmap for top N genes in all clusters
+for group in groups:
+    top_genes = (
+        df_all[df_all['group'] == group]
+        .sort_values('logfoldchanges', key=abs, ascending=False)  # Optional: sort by abs(logFC)
+        .head(top_n)['names']
+        .tolist()
+    )
+    top_genes_combined.extend(top_genes)
+
+top_genes_combined = list(dict.fromkeys(top_genes_combined))
+print("Top genes for heatmap:", top_genes_combined)
+
+# Plot heatmap
 sc.pl.rank_genes_groups_heatmap(
-    adata, 
-    groups=list(groups),  # all clusters
+    adata_new,
+    groups=groups,
     n_genes=top_n,
     swap_axes=True,
     show=True,
     save=f"_heatmap_{base_name}_Top{top_n}Genes_all_clusters.png"
 )
 
-# Optional: Custom heatmap of combined unique genes across clusters
-# sc.pl.heatmap(
-#     adata,
-#     var_names=top_genes_combined,
-#     groupby=annotation_col,
-#     swap_axes=True,
-#     show=True,
-#     save=f"_custom_heatmap_{base_name}_Top{top_n}Genes_all_clusters.png"
-# )
-
-adata.obs_names_make_unique()
-adata.write(newObject, compression="gzip")
-
+adata_new.obs_names_make_unique()
+adata_new.write(newObject, compression="gzip")
