@@ -510,6 +510,7 @@ adata = adata[
 
 ![legend_annotations](figures/umapreclustered_refined_doubletsRemoved_threshold0.8_neurog2_annotations.png)
 ![ON_annotations](figures/umapreclustered_refined_doubletsRemoved_threshold0.8_neurog2_annotationsON.png)
+![Dot plot marker genes](figures/dotplot__annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_markerGenes.png)
 
 
 ## UMAP per sample 
