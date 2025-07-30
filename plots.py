@@ -2,6 +2,8 @@ import argparse
 import os
 import scanpy as sc
 import matplotlib.pyplot as plt
+import pandas as pd
+
 
 # Argument parsing
 parser = argparse.ArgumentParser(description="Per-sample UMAPs and stacked bar plots")
@@ -15,6 +17,7 @@ base_name = os.path.splitext(os.path.basename(myObject))[0]
 adata = sc.read(myObject)
 print("✅ Columns in .obs:", adata.obs.columns)
 print(adata.obs.head())
+
 
 # UMAP plots for each sample
 samples = adata.obs['sample'].unique()
@@ -77,9 +80,8 @@ pivot_df = pivot_df[celltype_order]
 colors = [celltype_colors[ct] for ct in celltype_order]
 
 # Plot the stacked bar chart
-fig, ax = plt.subplots(figsize=(12, 6))
-pivot_df.plot(kind='bar', stacked=True, color=colors, ax=ax)
-
+fig, ax = plt.subplots(figsize=(6, 6))
+pivot_df.plot(kind='bar', stacked=True, color=colors, ax=ax,width=0.3)
 plt.ylabel("Fraction of cells")
 plt.xlabel("Sample")
 plt.title("Cell Type Contribution per Sample")
@@ -91,7 +93,6 @@ plt.tight_layout()
 plt.savefig("figures/Reversed_stacked_bar_sample_by_celltype.png", dpi=300)
 plt.close()
 
-celltype_order = ['MG', 'MGPC', 'BC', 'AC', 'Rod', 'Cones']
 
 # Make sure 'celltype' is a categorical column with this order
 adata.obs["celltype"] = pd.Categorical(
