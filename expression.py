@@ -77,7 +77,7 @@ sc.pl.rank_genes_groups_heatmap(
     swap_axes=True,
     use_raw=True,
     dendrogram=False,
-    save=f"_{base_name}_Top{top_n}Genes_all_clustertt.png"
+    save=f"_{base_name}_Top{top_n}Genes_all_clusterttest.png"
 )
 
 adata_new.obs_names_make_unique()

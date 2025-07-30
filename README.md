@@ -529,7 +529,7 @@ adata = adata[
 
 ### Using t-test method: according to scanpy documentation, logfold change is calculated when t-test methods are used 
 
-![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top5Genes_all_clustertt.png)
+![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top5Genes_all_clusterttest.png )
 
 ✅ ✅ [t-test Gene Expressions](https://docs.google.com/spreadsheets/d/19YY4ErDH-bcsntzXxDzc-D7wrKbziCzvH7x4rav1SbQ/edit?usp=sharing)
 
