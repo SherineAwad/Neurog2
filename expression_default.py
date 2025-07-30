@@ -50,14 +50,27 @@ for group in groups:
 top_genes_combined = list(dict.fromkeys(top_genes_combined))
 print("Top genes for heatmap:", top_genes_combined)
 
+celltype_order = ['MG', 'MGPC', 'BC', 'AC', 'Rod', 'Cones']
+adata.obs['celltype'] = adata.obs['celltype'].astype(str)
+adata.obs['celltype'] = pd.Categorical(
+    adata.obs['celltype'],
+    categories=celltype_order,
+    ordered=True
+)
+print("Confirmed category order:", adata.obs['celltype'].cat.categories)
+
 # Plot heatmap
 sc.pl.rank_genes_groups_heatmap(
     adata,
-    groups=groups,
+    groups=celltype_order,
+    groupby='celltype',
     n_genes=top_n,
     swap_axes=True,
-    save=f"_{base_name}_Top{top_n}Genes_all_clusters_noExp_default.png"
+    use_raw=False,
+    dendrogram=False,
+    save=f"_{base_name}_Top{top_n}Genes_all_clusterDefault.png"
 )
+
 
 #adata.obs_names_make_unique()
 #adata.write(newObject, compression="gzip")
