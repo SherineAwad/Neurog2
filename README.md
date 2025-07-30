@@ -527,25 +527,20 @@ adata = adata[
 
 #### Gene Expression Analysis 
 
-### Using t-test method: according to scanpy documentation, logfold change is calculated when t-test methods are used 
+### 🎯 Using t-test method: according to scanpy documentation, logfold change is calculated when t-test methods are used 
 
 ![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top5Genes_all_clusterttest.png )
 
 ✅ ✅ [t-test Gene Expressions](https://docs.google.com/spreadsheets/d/19YY4ErDH-bcsntzXxDzc-D7wrKbziCzvH7x4rav1SbQ/edit?usp=sharing)
 
 
-### Using default parameters of scanpy which doesn't calculate log foldchange
+### 🎯 Using default parameters of scanpy which doesn't calculate log foldchange
 
 ![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top5Genes_all_clusterDefault.png)
  
 ✅ ✅ [Default Parameters Gene Expressions](https://docs.google.com/spreadsheets/d/15ME9IKEDl7INO-U6jz7JE6d_yVFePF824eoymJG3QWE/edit?usp=sharing) 
 
  
-#### TO DO 
-
-##### Tweak figures colors and size 
-
-
 ## How to run Snakemake 
 
 For dry run to check everything before actual run:
