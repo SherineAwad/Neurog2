@@ -58,13 +58,25 @@ top_genes_combined = list(dict.fromkeys(top_genes_combined))
 print("Top genes for heatmap:", top_genes_combined)
 adata_new.raw = adata  # assuming `adata` holds normalized + log1p
 
+
+celltype_order = ['MG', 'MGPC', 'BC', 'AC', 'Rod', 'Cones']
+adata_new.obs['celltype'] = adata_new.obs['celltype'].astype(str)
+adata_new.obs['celltype'] = pd.Categorical(
+    adata_new.obs['celltype'],
+    categories=celltype_order,
+    ordered=True
+)
+print("Confirmed category order:", adata_new.obs['celltype'].cat.categories)
+
 # Plot heatmap
 sc.pl.rank_genes_groups_heatmap(
     adata_new,
-    groups=groups,
+    groups=celltype_order,
+    groupby='celltype',
     n_genes=top_n,
     swap_axes=True,
     use_raw=True,
+    dendrogram=False,
     save=f"_{base_name}_Top{top_n}Genes_all_clustertt.png"
 )
 
