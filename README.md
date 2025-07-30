@@ -540,6 +540,15 @@ adata = adata[
  
 ✅ ✅ [Default Parameters Gene Expressions](https://docs.google.com/spreadsheets/d/15ME9IKEDl7INO-U6jz7JE6d_yVFePF824eoymJG3QWE/edit?usp=sharing) 
 
+
+
+### Using Wilcoxon method 
+
+![heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top5Genes_all_clusterwl.png)
+
+
+✅ ✅ [Wilcoxon Gene Expressions](https://docs.google.com/spreadsheets/d/1Xkz7XOfQqkARZs5gnu4-vR8OwBl62RIJ0cb3jYEn1oQ/edit?usp=sharing)
+
  
 ## How to run Snakemake 
 

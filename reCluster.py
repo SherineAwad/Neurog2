@@ -82,8 +82,6 @@ for gene in marker_genes:
             save=f"_reClustered_{base_name}_{gene}.png"
         )
 
-
-
 marker_genes  = {
     "MG": ["Rlbp1","Gfap","Apoe","Notch1","Pax6","Slc1a3","Vim"],
     "Rod": ["Rho","Nrl","Crx","Rom1"],
@@ -96,8 +94,6 @@ marker_genes  = {
     "Astrocytes":["Pax2","Igf2", "Gfap"]
     }
 sc.pl.dotplot(adata, marker_genes, groupby="leiden", standard_scale="var", save=f"_reClustered_{base_name}_markerGenes.png")
-
-
 
 adata.obs_names_make_unique()
 adata.write(newObject, compression="gzip")
