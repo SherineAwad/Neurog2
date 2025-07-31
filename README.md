@@ -549,7 +549,13 @@ adata = adata[
 
 ✅ ✅ [Wilcoxon Gene Expressions](https://docs.google.com/spreadsheets/d/1Xkz7XOfQqkARZs5gnu4-vR8OwBl62RIJ0cb3jYEn1oQ/edit?usp=sharing)
 
- 
+
+### 🎯🎯 Using T-test Control vs treatments 
+
+![Heatmap Expression](heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top10Genes_all_clusterttestG.png) 
+
+✅ ✅ [ttest Gene Expressions]
+
 ## How to run Snakemake 
 
 For dry run to check everything before actual run:
