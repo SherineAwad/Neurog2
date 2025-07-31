@@ -552,7 +552,7 @@ adata = adata[
 
 ### 🎯🎯 Using T-test Control vs treatments 
 
-![Heatmap Expression](heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top10Genes_all_clusterttestG.png) 
+![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top10Genes_all_clusterttestG.png) 
 
 ✅ ✅ [ttest Gene Expressions]
 
