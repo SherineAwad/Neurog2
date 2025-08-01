@@ -557,6 +557,23 @@ adata = adata[
 ✅ ✅ [ttest Gene Expressions](https://docs.google.com/spreadsheets/d/1DGXnW9RvCnNbShXm3ecENHvq8_y57AAPmCFAiawWzWM/edit?usp=sharing)
 
 
+
+### 🎯🎯 Using Scanpy default parameters Control vs treatments 
+
+![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top10Genes_all_clusterDefaultG.png)
+
+
+✅ ✅ [ttest Gene Expressions](https://docs.google.com/spreadsheets/d/1avMbUsgFsyjhQMzglL1fgvCaEboh7GPju_C5Zfi2pKs/edit?usp=sharing)
+
+
+### 🎯🎯 Using Wilcoxon Control vs treatments 
+
+![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top10Genes_all_clusterwlG.png)
+
+✅ ✅ [ttest Gene Expressions](https://docs.google.com/spreadsheets/d/1pMlVsG8R36sjJedXt6VA-5g_VUjkTH9EQKZ85xJYr6g/edit?usp=sharing)
+
+
+
 ## How to run Snakemake 
 
 For dry run to check everything before actual run:

@@ -35,7 +35,7 @@ for group in groups:
 df_all.to_csv(f"ranked_genes_{base_name}_ALL_noExp_default.csv", index=False)
 
 # Get top N genes per group (by absolute logfc or rank)
-top_n = 5
+top_n = 10
 top_genes_combined = []
 
 for group in groups:
@@ -67,6 +67,7 @@ sc.pl.rank_genes_groups_heatmap(
     n_genes=top_n,
     swap_axes=True,
     use_raw=False,
+    cmap='bwr',
     dendrogram=False,
     save=f"_{base_name}_Top{top_n}Genes_all_clusterDefault.png"
 )
