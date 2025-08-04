@@ -558,19 +558,26 @@ adata = adata[
 
 
 
-### 🎯🎯 Using Scanpy default parameters Control vs treatments 
+### 🎯🎯 Using Scanpy default parameters Control vs treatments using MG only
 
 ![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top10Genes_all_clusterDefaultG.png)
 
 
-✅ ✅ [ttest Gene Expressions](https://docs.google.com/spreadsheets/d/1avMbUsgFsyjhQMzglL1fgvCaEboh7GPju_C5Zfi2pKs/edit?usp=sharing)
+✅ ✅ [Default Gene Expressions](https://docs.google.com/spreadsheets/d/1Svw2Cc_LFwLNCNnfkRx8EegpttJcuUjn00mHoSuPZbU/edit?usp=sharing)
+
+
+### 🎯🎯 Using t-test Control vs treatments 
+
+![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top10Genes_all_clusterttestG.png)
+
+✅ ✅ [ttest Gene Expressions](https://docs.google.com/spreadsheets/d/15lF52EWJKENZb8dBTOEYmIaYLp0NJFJTW5XGaMbD4EA/edit?usp=sharing)
 
 
 ### 🎯🎯 Using Wilcoxon Control vs treatments 
 
 ![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top10Genes_all_clusterwlG.png)
 
-✅ ✅ [ttest Gene Expressions](https://docs.google.com/spreadsheets/d/1pMlVsG8R36sjJedXt6VA-5g_VUjkTH9EQKZ85xJYr6g/edit?usp=sharing)
+✅ ✅ [Wilcoxon Gene Expressions](https://docs.google.com/spreadsheets/d/1MV_jJk67ma8oEg4DDRkRBfIscvdIokmLa2N90W27-a8/edit?usp=sharing)
 
 
 
