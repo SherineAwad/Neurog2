@@ -1,4 +1,4 @@
-with open(config['SAMPLES']) a≈s fp:
+with open(config['SAMPLES']) as fp:
     samples = fp.read().splitlines()
 SUBSET = ['Cones', 'AC'] 
 
@@ -49,7 +49,7 @@ rule analyse:
 
 rule cluster: 
        input:
-          expand("analysed_{all}.h5ad", all=config['ALL']) 
+          expand("ddanalysed_doubletScores_0.8_{all}.h5ad", all =config['ALL'])
        params: 
           markers = config['MARKERS']  
        output:
@@ -61,7 +61,7 @@ rule cluster:
 
 rule doubletRemoval: 
       input: 
-          expand("reclustered_clustered_analysed_{all}.h5ad", all=config['ALL'])
+          expand("clustered_ddanalysed_doubletScores_0.8_{all}.h5ad", all=config['ALL'])
       output: 
           expand("doubletsRemoved_threshold0.8_clustered_ddanalysed_doubletScores_0.8_{all}.h5ad", all=config['ALL'])
       params: 
@@ -69,7 +69,7 @@ rule doubletRemoval:
          doublet_cutoff=0.8         
       shell: 
           """
-          python removeDoublets.py clustered_ddanalysed_doubletScores_0.8_neurog2.h5ad {params.marakers} {params.doublet_cutoff}
+          python removeDoublets.py clustered_ddanalysed_doubletScores_0.8_neurog2.h5ad {params.markers} {params.doublet_cutoff}
           """
 
 rule refine:
