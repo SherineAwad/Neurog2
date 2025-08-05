@@ -580,6 +580,14 @@ adata = adata[
 ✅ ✅ [Wilcoxon Gene Expressions](https://docs.google.com/spreadsheets/d/1MV_jJk67ma8oEg4DDRkRBfIscvdIokmLa2N90W27-a8/edit?usp=sharing)
 
 
+## We tried to filter genes expressed less than 10% before proceeding with the analysis 
+## Still using t-test method 
+## Look at expressionG10.py python script 
+
+![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top10Genes_all_clusterttestG10.png) 
+
+✅ ✅ [ttest Gene Expressions](https://docs.google.com/spreadsheets/d/1B6B6qDTJoKtObiHOSZRXomW-1GvsQnACPcZWqNaShXg/edit?usp=sharing)
+
 
 ## How to run Snakemake 
 
