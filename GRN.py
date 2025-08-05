@@ -10,7 +10,7 @@ import subprocess
 import argparse 
 
 # Set working directory
-wdir = "/nfs/turbo/umms-thahoang/sherine/scenic/"
+wdir = "/nfs/turbo/umms-thahoang/sherine/neurog2/"
 os.chdir(wdir)
 
 # Create parser
