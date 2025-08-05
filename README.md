@@ -589,6 +589,27 @@ adata = adata[
 ✅ ✅ [ttest Gene Expressions](https://docs.google.com/spreadsheets/d/1B6B6qDTJoKtObiHOSZRXomW-1GvsQnACPcZWqNaShXg/edit?usp=sharing)
 
 
+# ✨✨✨ Running PyScenic for transcription factors network 
+
+### ✅ Loom File Summary
+
+**Basic Info:**  
+- Shape (genes × cells): **(2354, 44755)**  
+
+**🧬 Row Attributes (Gene metadata):**  
+- Attributes: `['Gene']`  
+- Example gene names: `['Rgs20', 'Adhfe1', 'Ppp1r42', 'Prex2', 'Sbspon']`  
+
+**🧫 Column Attributes (Cell metadata):**  
+- Attributes: `['CellID', 'nGene', 'nUMI']`  
+- Example CellIDs: `['AAACCAAAGCCATACA-1', 'AAACCCGCAATCCGTC-1', 'AAACCCGCATCACTGC-1', 'AAACCCGCATCGTACC-1', 'AAACCCTGTTGCTGTG-1']`  
+
+**🔢 Expression Matrix Summary:**  
+- Shape: **(44755, 2354)**  
+- Data type: `float32`  
+- Non-zero entries: **105,353,270**
+
+
 ## How to run Snakemake 
 
 For dry run to check everything before actual run:
