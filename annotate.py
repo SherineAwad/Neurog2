@@ -35,12 +35,13 @@ cluster_to_celltype_dict = {str(key): value for key, value in cluster_to_celltyp
 adata.obs["celltype"] = adata.obs["leiden"].map(cluster_to_celltype_dict)
 
 # Set celltype colors
+
 celltype_colors = {
-    'AC': '#e31a1c',       # Red
+    'Cones': '#e31a1c',       # Red
     'MG': '#0C727C',       # Greenish Turquoise  
-    'Cones': '#026AB1',    # Blue 
-    'MGPC': '#9467bd',     # Purple
-    'BC': '#c2a5cf',       # Light Purple
+    'AC': '#026AB1',    # Blue 
+    'MGPC': '#6E4B9E',      # Purple
+    'BC': '#8A9FD1',       # Light Purple
     'Rod': '#bdbdbd'       # Grey
 }
 

@@ -26,23 +26,22 @@ for sample in samples:
         adata[adata.obs['sample'] == sample],
         color='sample',
         title=f"Sample: {sample}",
-        size=10,
+        size=5,
         save=f"_reclustered_{sample}.png",
         show=False
     )
 
 # UMAP colored by sample
-sc.pl.umap(adata, color='sample', size=10, save=f"reclustered_{base_name}.png")
+sc.pl.umap(adata, color='sample', size=5, save=f"reclustered_{base_name}.png")
 
 celltype_colors = {
-    'AC': '#e31a1c',       # Red
-    'MG': '#0C727C',       # Greenish Turquoise
-    'Cones': '#026AB1',    # Blue
-    'MGPC': '#9467bd',     # Purple
-    'BC': '#c2a5cf',       # Light Purple
+    'Cones': '#e31a1c',       # Red
+    'MG': '#0C727C',       # Greenish Turquoise  
+    'AC': '#026AB1',    # Blue 
+    'MGPC': '#6E4B9E',     # Purple
+    'BC': '#8A9FD1',       # Light Purple
     'Rod': '#bdbdbd'       # Grey
 }
-
 
 # Create dataframe of counts
 df = (
@@ -63,6 +62,7 @@ print("✅ Available sample names:", pivot_df.index.tolist())
 # Manually define sample and celltype order
 sample_order = ['control_2mo', 'Neurog2_9SA_5weeks', 'Neurog2_9SA_2mo']
 celltype_order = ['MG', 'MGPC', 'BC', 'AC', 'Rod', 'Cones']
+short_sample_names = ['Control', '5weeks', '2months']
 
 # Check and reorder samples
 missing_samples = [s for s in sample_order if s not in pivot_df.index]
@@ -80,12 +80,12 @@ pivot_df = pivot_df[celltype_order]
 colors = [celltype_colors[ct] for ct in celltype_order]
 
 # Plot the stacked bar chart
-fig, ax = plt.subplots(figsize=(6, 6))
-pivot_df.plot(kind='bar', stacked=True, color=colors, ax=ax,width=0.3)
-plt.ylabel("Fraction of cells")
+fig, ax = plt.subplots(figsize=(5, 4))
+pivot_df.plot(kind='bar', stacked=True, color=colors, ax=ax,width=0.7)
+plt.ylabel("Fraction of cells",fontsize=12)
 plt.xlabel("Sample")
-plt.title("Cell Type Contribution per Sample")
-plt.xticks(rotation=45, ha='right')
+plt.title("Cell Type Contribution per Sample", fontsize=12)
+ax.set_xticklabels(short_sample_names, rotation=0, ha='center', fontsize=10)
 plt.legend(title='Cell Type', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 
@@ -101,26 +101,35 @@ adata.obs["celltype"] = pd.Categorical(
     ordered=True
 )
 
-marker_genes  = {
-    "MG": ["Rlbp1","Slc1a3"],
-    "Rod": ["Rho","Nrl"],
-    "Cones": ["Arr3","Gnat2"],
-    "BC": ["Cabp5","Otx2", "Scgn"] ,
-    "AC": ["Chat","Elavl3", "Gad2"],
-    "MGPC": ["Ascl1"]
-    }
+marker_genes = {
+ "MG": ["Rlbp1","Slc1a3"],
+  "Rod": ["Nrl", "Rho"],
+  "Cones": ["Arr3","Gnat2"],
+  "BC": ["Otx2", "Cabp5", "Scgn"] ,
+  "AC": ["Elavl3", "Gad2", "Chat"],
+  "MGPC": ["Ascl1"]
+  }
 
+import pandas as pd
+
+# Ensure celltype column is categorical with desired order
+celltype_order = ['MG', 'MGPC', 'BC', 'AC', 'Rod', 'Cones']
+adata.obs['celltype'] = pd.Categorical(adata.obs['celltype'], categories=celltype_order, ordered=True)
+
+markergenes = [
+    'Rlbp1', 'Slc1a3', 'Ascl1', 'Otx2', 'Cabp5', 'Scgn',
+    'Elavl3', 'Gad2', 'Chat', 'Nrl', 'Rho', 'Arr3', 'Gnat2'
+]
 
 sc.pl.dotplot(
     adata,
-    marker_genes,
+    markergenes,
     groupby="celltype",
-    swap_axes=True,
+    categories_order = celltype_order,
     standard_scale="var",
-    figsize=(8, 6),
-    show=False, dendrogram=False, save= f"_{base_name}_markerGenes.png") 
+    figsize=(6,5),
+    dot_max=1.0, show=False, dendrogram=False, save= f"_{base_name}_markerGenes.png") 
 
-plt.tight_layout()
 
 
 

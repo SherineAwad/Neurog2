@@ -103,5 +103,5 @@ sc.pl.rank_genes_groups_heatmap(
     save=f"_{base_name}_Top{top_n}Genes_all_clusterttestG10.png"
 )
 
-#adata_new.obs_names_make_unique()
-#adata_new.write(newObject, compression="gzip")
+adata.obs_names_make_unique()
+adata.write(newObject, compression="gzip")

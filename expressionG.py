@@ -35,8 +35,20 @@ adata_new.obs['comparison_group'] = adata_new.obs['sample'].map(
 # Filter to only control and treatment samples
 adata_new = adata_new[adata_new.obs['comparison_group'].isin(['control', 'treatment'])].copy()
 
-sc.tl.rank_genes_groups(adata_new, groupby="comparison_group", method='t-test')
-df_all = sc.get.rank_genes_groups_df(adata_new, group=None)
+# 1. Subset to only control and treatment
+adata_sub = adata_new[adata_new.obs['comparison_group'].isin(['control', 'treatment'])].copy()
+
+# 2. Then subset to MG only
+adata_sub = adata_sub[adata_sub.obs['celltype'] == 'MG'].copy()
+
+# 3. Optional: Drop or subset .raw if used (to avoid shape mismatch)
+# If you're using .raw and want to keep it consistent:
+adata_sub.raw = adata_sub
+
+# 4. Run DE
+sc.tl.rank_genes_groups(adata_sub, groupby="comparison_group", method='t-test')
+df_all = sc.get.rank_genes_groups_df(adata_sub, group=None)
+
 print(df_all[['group', 'names', 'logfoldchanges', 'pvals_adj']].head())
 print("Available columns in DE results:", df_all.columns.tolist())
 
@@ -65,17 +77,14 @@ for group in groups:
 
 top_genes_combined = list(dict.fromkeys(top_genes_combined))
 print("Top genes for heatmap:", top_genes_combined)
-adata_new.raw = adata  # assuming `adata` holds normalized + log1p
-
-
 
 # Plot heatmap
 sc.pl.rank_genes_groups_heatmap(
-    adata_new,
+    adata_sub,
     groupby="comparison_group",
     n_genes=top_n,
     swap_axes=True,
-    use_raw=True,
+    use_raw=False,
     dendrogram=False,
     cmap='bwr',
     save=f"_{base_name}_Top{top_n}Genes_all_clusterttestG.png"
