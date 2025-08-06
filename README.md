@@ -613,32 +613,7 @@ Loom file contains the raw or filtered gene expression matrix + cell and gene me
 - Data type: `float32`  
 - Non-zero entries: **105,353,270**
 
-### ## 🔍 Step: GRN Inference
-
-**Purpose:**  
-Infer *co-expression modules* between transcription factors (TFs) and potential target genes based on the expression data in your `.loom` file.
-
-**Algorithm used:**  
-Usually **GRNBoost2** (gradient boosting trees) or **GENIE3** (random forests) — pySCENIC chooses GRNBoost2 by default unless overridden.
-
----
-
-### 📥 Input
-- **Loom file** (`f_loom_path_scenic`):  
-  Contains the raw or filtered gene expression matrix + cell and gene metadata.
-- **TF list** (`f_tfs`):  
-  List of transcription factor gene names to test as potential regulators.
-- **Number of workers** (`--num_workers`):  
-  Parallel threads for faster computation.
-
----
-
-### 📤 Output
-- **File** (`output_csv`):  
-  A **tab-separated text file (TSV)** containing *adjacencies* between regulators (TFs) and potential target genes.
-
-#### Sample output head 10 
-## 🔍 Step: GRN Inference
+### 🔍 Step: GRN Inference
 
 **Purpose:**  
 Infer *co-expression modules* between transcription factors (TFs) and potential target genes based on the expression data in your `.loom` file.
