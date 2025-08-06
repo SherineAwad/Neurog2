@@ -613,7 +613,27 @@ Loom file contains the raw or filtered gene expression matrix + cell and gene me
 - Data type: `float32`  
 - Non-zero entries: **105,353,270**
 
-### 🔍 Step: GRN Inference
+## 🧠 Overview of pySCENIC Workflow
+
+### 1️⃣ GRN Inference
+- Finds **candidate TF–target edges** ranked by “importance” score (**GRNBoost2** / **GENIE3**).
+- This is like making a **draft network** from correlations / feature importance.
+
+---
+
+### 2️⃣ Motif Enrichment Pruning *(a.k.a. cisTarget)*
+- For each TF’s candidate targets, pySCENIC checks whether the genes’ regulatory regions are enriched for that TF’s **known DNA-binding motifs**.
+- Removes targets that look correlated but are unlikely to be **direct regulation**.
+- Produces **regulons** → *(TF + filtered target set)*.
+
+---
+
+### 3️⃣ AUCell Scoring
+- Measures the **activity of each regulon** per cell.
+- Produces a **cell × regulon activity matrix** for downstream analysis.
+
+
+### 🔍 Step 1: GRN Inference
 
 **Purpose:**  
 Infer *co-expression modules* between transcription factors (TFs) and potential target genes based on the expression data in your `.loom` file.
@@ -637,7 +657,7 @@ Usually **GRNBoost2** (gradient boosting trees) or **GENIE3** (random forests) �
 - **File** (`output_csv`):  
   A **tab-separated text file (TSV)** containing *adjacencies* between regulators (TFs) and potential target genes.
 
-**Top Neurog2 predictions**
+**Sample of Neurog2 predictions**
 
 | TF       | Target | Importance  |
 |----------|--------|-------------|
@@ -658,7 +678,7 @@ Usually **GRNBoost2** (gradient boosting trees) or **GENIE3** (random forests) �
 - **Target** → Gene found to be co-expressed with that TF.
 - **Importance** → Score from GRNBoost2/GENIE3 indicating the strength of the association (*higher = stronger*).
 
-
+### Working on step 2 and 3 and visualising the network 
 
 ## How to run Snakemake 
 
