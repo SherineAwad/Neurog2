@@ -623,6 +623,7 @@ Loom file contains the raw or filtered gene expression matrix + cell and gene me
 
 ### 2️⃣ Motif Enrichment Pruning *(a.k.a. cisTarget)*
 - For each TF’s candidate targets, pySCENIC checks whether the genes’ regulatory regions are enriched for that TF’s **known DNA-binding motifs**.
+- Basically, filters those pairs, keeping only the targets whose promoters or enhancers have binding motifs for that TF
 - Removes targets that look correlated but are unlikely to be **direct regulation**.
 - Produces **regulons** → *(TF + filtered target set)*.
 
@@ -631,6 +632,10 @@ Loom file contains the raw or filtered gene expression matrix + cell and gene me
 ### 3️⃣ AUCell Scoring
 - Measures the **activity of each regulon** per cell.
 - Produces a **cell × regulon activity matrix** for downstream analysis.
+- Basically, after you have your regulons (TF + its filtered targets), you want to know:
+   “In each single cell, is this regulon active?”
+   Instead of relying on absolute expression thresholds (which vary a lot between cells), AUCell uses gene set enrichment in each cell’s ranked expression profile.
+
 
 
 ### 🔍 Step 1: GRN Inference
