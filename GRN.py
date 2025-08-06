@@ -1,11 +1,5 @@
 import os
-import numpy as np
 import pandas as pd
-import scanpy as sc
-import loompy as lp
-from MulticoreTSNE import MulticoreTSNE as TSNE
-import seaborn as sns
-import matplotlib.pyplot as plt
 import subprocess
 import argparse 
 
@@ -30,6 +24,8 @@ f_tfs = args.tfs
 f_loom_path_scenic = args.loom
 output_csv = args.output
 num_workers = args.workers
+
+print("Done argparsing") 
 
 # Prepare command
 cmd = [

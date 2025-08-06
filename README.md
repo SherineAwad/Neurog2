@@ -593,6 +593,10 @@ adata = adata[
 
 ### ✅ Loom File Summary
 
+
+Loom file contains the raw or filtered gene expression matrix + cell and gene metadata.
+
+
 **Basic Info:**  
 - Shape (genes × cells): **(2354, 44755)**  
 
@@ -608,6 +612,77 @@ adata = adata[
 - Shape: **(44755, 2354)**  
 - Data type: `float32`  
 - Non-zero entries: **105,353,270**
+
+### ## 🔍 Step: GRN Inference
+
+**Purpose:**  
+Infer *co-expression modules* between transcription factors (TFs) and potential target genes based on the expression data in your `.loom` file.
+
+**Algorithm used:**  
+Usually **GRNBoost2** (gradient boosting trees) or **GENIE3** (random forests) — pySCENIC chooses GRNBoost2 by default unless overridden.
+
+---
+
+### 📥 Input
+- **Loom file** (`f_loom_path_scenic`):  
+  Contains the raw or filtered gene expression matrix + cell and gene metadata.
+- **TF list** (`f_tfs`):  
+  List of transcription factor gene names to test as potential regulators.
+- **Number of workers** (`--num_workers`):  
+  Parallel threads for faster computation.
+
+---
+
+### 📤 Output
+- **File** (`output_csv`):  
+  A **tab-separated text file (TSV)** containing *adjacencies* between regulators (TFs) and potential target genes.
+
+#### Sample output head 10 
+## 🔍 Step: GRN Inference
+
+**Purpose:**  
+Infer *co-expression modules* between transcription factors (TFs) and potential target genes based on the expression data in your `.loom` file.
+
+**Algorithm used:**  
+Usually **GRNBoost2** (gradient boosting trees) or **GENIE3** (random forests) — pySCENIC chooses GRNBoost2 by default unless overridden.
+
+---
+
+### 📥 Input
+- **Loom file** (`f_loom_path_scenic`):  
+  Contains the raw or filtered gene expression matrix + cell and gene metadata.
+- **TF list** (`f_tfs`):  
+  List of transcription factor gene names to test as potential regulators.
+- **Number of workers** (`--num_workers`):  
+  Parallel threads for faster computation.
+
+---
+
+### 📤 Output
+- **File** (`output_csv`):  
+  A **tab-separated text file (TSV)** containing *adjacencies* between regulators (TFs) and potential target genes.
+
+**Top Neurog2 predictions**
+
+| TF       | Target | Importance  |
+|----------|--------|-------------|
+| Tsc22d4  | Crym   | 43.39       |
+| Tsc22d4  | Dbi    | 42.27       |
+| Tsc22d4  | Prdx6  | 40.51       |
+| Sox9     | Acsl3  | 38.60       |
+| Tsc22d4  | Cd9    | 37.82       |
+| Tsc22d4  | Glul   | 37.04       |
+| Tsc22d4  | Cox4i2 | 36.05       |
+| Tsc22d4  | Hopx   | 35.71       |
+| Tsc22d4  | Apoe   | 35.60       |
+
+---
+
+### 🧾 Column descriptions
+- **TF** → *Transcription factor* from your TF list.
+- **Target** → Gene found to be co-expressed with that TF.
+- **Importance** → Score from GRNBoost2/GENIE3 indicating the strength of the association (*higher = stronger*).
+
 
 
 ## How to run Snakemake 
