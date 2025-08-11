@@ -444,7 +444,7 @@ adata = adata[
 ![UMAP resolution 1.4](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_1.4res.png)
 
 #### Resolution = 2.0
-![UMAP resoultion 2.0](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_2.0res.png)
+![UMAP resoultion 2.0](figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_2.0res.png)
 
 #### Resolution = 2.5
 ![UMAP resoultion 2.5](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_2.5res.png)
@@ -464,7 +464,7 @@ adata = adata[
 ### We will stick to resolution 2.0 
 
 #### Resolution = 2.0
-![UMAP resolution 2.0](figures/umap_reClustered_refined_doubletsRemoved_threshold0.8_neurog2_2.0res.png)
+![UMAP resolution 2.0](figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_2.0res.png)
 
 #### UMAP of marker genes  
 
@@ -508,17 +508,18 @@ adata = adata[
 
 ## Annotations 
 
-![legend_annotations](figures/umapreclustered_refined_doubletsRemoved_threshold0.8_neurog2_annotations.png)
-![ON_annotations](figures/umapreclustered_refined_doubletsRemoved_threshold0.8_neurog2_annotationsON.png)
-## !!!! TO BE FIXED 
-![Dot plot marker genes](figures/dotplot__annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_markerGenes.png)
+![legend_annotations](figures/reclustered_refined_doubletsRemoved_threshold0.8_neurog2_annotations.png)
+![ON_annotations](figures/reclustered_refined_doubletsRemoved_threshold0.8_neurog2_annotationsON.png)
+
+
+![Dot plot marker genes](figures/dotplot_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_markerGenes.png) 
 
 
 ## UMAP per sample 
-![Control](figures/umap_reclustered_control_2mo.png)
-![Neurog2_9SA_5weeks](figures/umap_reclustered_Neurog2_9SA_5weeks.png)
-![Neurog2_9S1_2mo](figures/umap_reclustered_Neurog2_9SA_2mo.png)
-![UMAP_All](figures/umapreclustered_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.png)
+![Control](figures/reclustered_control_2mo.png)
+![Neurog2_9SA_5weeks](figures/reclustered_Neurog2_9SA_5weeks.png)
+![Neurog2_9S1_2mo](figures/reclustered_Neurog2_9SA_2mo.png)
+![UMAP_All](figures/reclustered_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2.png)
 
 ## Cell Ratio 
 
