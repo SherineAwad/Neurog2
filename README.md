@@ -607,6 +607,12 @@ adata = adata[
 ✅ ✅ [Gene Expressions](https://docs.google.com/spreadsheets/d/15DllPLLUbA8YY5hsobWSMwFKr8LkOQ-S2VVb4A7SQTk/edit?usp=sharing)
 
 
+### Here we need to reverse logp1 using expm1 to be able to calculate logfoldchanges -missed in above methods-
+### We used wilcoxon method and ranked using logfoldchanges (unlike above ranked on scores) 
+
+![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top50Genes_fwlheatmap.png)
+✅ ✅ [Gene Expressions](https://docs.google.com/spreadsheets/d/1T1vVbhErEv14EHqtV9k93Ec9NrOIDKgY66_rsJdy-ps/edit?usp=sharing)
+
 # ✨✨✨ Running PyScenic for transcription factors network 
 
 ### ✅ Loom File Summary
