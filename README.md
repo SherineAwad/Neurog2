@@ -600,6 +600,11 @@ adata = adata[
 
 ✅ ✅ [Gene Expressions](https://docs.google.com/spreadsheets/d/1B_Wr2ximhTF2AKSQk1i2nRvdb-KxmYrS1koNZWt9NmU/edit?usp=sharing)
 
+### Same method as above but filter genes less than 10% expressed in all cells
+
+![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top50Genes_fheatmap.png)
+
+✅ ✅ [Gene Expressions](https://docs.google.com/spreadsheets/d/15DllPLLUbA8YY5hsobWSMwFKr8LkOQ-S2VVb4A7SQTk/edit?usp=sharing)
 
 
 # ✨✨✨ Running PyScenic for transcription factors network 
