@@ -590,6 +590,18 @@ adata = adata[
 ✅ ✅ [ttest Gene Expressions](https://docs.google.com/spreadsheets/d/1B6B6qDTJoKtObiHOSZRXomW-1GvsQnACPcZWqNaShXg/edit?usp=sharing)
 
 
+
+# ✅✅✅✅✅ NEWER PART HERE 
+
+#### Use default paramters of scanpy without converting the log back using expm1, ranking with scores and no logfold changes calculated 
+#### Avoiding reversing log1p with expm1 that might crew up values
+
+![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top50Genes_heatmap.png)
+
+✅ ✅ [Gene Expressions](https://docs.google.com/spreadsheets/d/1B_Wr2ximhTF2AKSQk1i2nRvdb-KxmYrS1koNZWt9NmU/edit?usp=sharing)
+
+
+
 # ✨✨✨ Running PyScenic for transcription factors network 
 
 ### ✅ Loom File Summary
