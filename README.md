@@ -593,6 +593,17 @@ adata = adata[
 
 # ✅✅✅✅✅ NEWER PART HERE 
 
+
+
+#### Here we used wilcoxon method 
+#### To be able to calculate logfoldchange, we have to reverse logp1 using expm1 
+#### We rank using logfoldchange 
+###### look into `expression_fwilcoxon.py`
+
+![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top20Genes_fwl.png)
+✅ ✅ [Gene Expressions](https://docs.google.com/spreadsheets/d/1IgBoyTzeslYIdQStI7GnH2YPAXV0a2VxTBM1M56tCzI/edit?usp=sharing)
+
+
 #### Use default paramters of scanpy without converting the log back using expm1, ranking with scores and no logfold changes calculated 
 #### Avoiding reversing log1p with expm1 that might crew up values
 
