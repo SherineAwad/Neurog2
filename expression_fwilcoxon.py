@@ -63,7 +63,7 @@ top_genes_combined = []
 for group in groups:
     top_genes = (
         df_all[df_all['group'] == group]
-        .sort_values('logfoldchanges', key=abs, ascending=False)  # Optional: sort by abs(logFC)
+        .sort_values('logfoldchanges', key=lambda x: x.abs(), ascending=False)  # Optional: sort by abs(logFC)
         .head(top_n)['names']
         .tolist()
     )
@@ -91,21 +91,18 @@ top_genes_filtered = top_genes_filtered[:top_n]
 
 print(f"Top {top_n} genes for heatmap (present in raw): {top_genes_filtered}")
 
-
-sc.pl.rank_genes_groups_heatmap(
+# Plot heatmap using raw counts (unlogged) for expression values
+sc.pl.heatmap(
     adata,
-    groups=celltype_order,
-    groupby='celltype',
     var_names=top_genes_filtered,
-    swap_axes=False,            # try turning off swap_axes
-    use_raw=True,
-    dendrogram=False,
+    groupby='celltype',
+    use_raw=True,        # use adata.raw if it stores your unlogged counts
+    swap_axes=True,     # genes on Y-axis
     cmap='bwr',
-    show_gene_labels=True,      # keep True, but might need other fixes
-    gene_symbols=None,          # explicitly specify if you have a gene_symbols column in adata.var
-    figsize=(10,8),             # increase figure size so labels fit
+    show_gene_labels=True,
+    figsize=(10, 8),
     save=f"_{base_name}_Top{top_n}Genes_fwl.png"
 )
 
-adata.obs_names_make_unique()
-adata.write(newObject, compression="gzip")
+#adata.obs_names_make_unique()
+#adata.write(newObject, compression="gzip")
