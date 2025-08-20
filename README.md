@@ -564,7 +564,7 @@ Heatmap is sorted by calculated logfoldchanges
 ![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_top_genes_logFC_heatmap.png)
 
 and
-[Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/1oNayEVGP2TKyatMQhKBFBp2AK6aFu5-L7pMe91y8oEk/edit?usp=sharing)
+[Gene Expression using seurat like method and manual LogFC](https://docs.google.com/spreadsheets/d/1oNayEVGP2TKyatMQhKBFBp2AK6aFu5-L7pMe91y8oEk/edit?usp=sharing)
 
 ### 🎯🎯 Using t-test method: according to scanpy documentation, logfold change is calculated when t-test methods are used 
 
