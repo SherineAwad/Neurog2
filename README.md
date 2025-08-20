@@ -532,6 +532,10 @@ adata = adata[
 ### Using similar way as Seurat in scanpy to calculate DGE 
 
 The following code performs differential expression analysis per cell type (or cluster) in `adata`, emulating Seurat's `FindMarkers` function.
+The heatmap is sorted by the z-score of the expression values. 
+No logfold changes is calculated ..  
+For more details, see the script [`asSeurat.py`](asSeurat.py).
+
 
 ```python
 import scanpy as sc
@@ -552,6 +556,17 @@ sc.tl.rank_genes_groups(
 and 
 [Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/16Y2rwTCy1MRV7m4qH0WuFJtnYpUUmQJd2LInueTHFvI/edit?usp=sharing)
 
+
+### ### Using similar way as Seurat in scanpy to calculate DGE  and calculate logFC manually 
+
+For more details, see the script [`asSeuratFC.py`](asSeuratFC.py).
+Heatmap is sorted by calculated logfoldchanges 
+
+![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_top_genes_heatmap_FC.png)
+
+and
+[Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/1HRKuJPSFSD89CK6DCihA5MutTn9SunbTZ-b4S44Uxfk/edit?usp=sharing)
+       
 
 ### 🎯🎯 Using t-test method: according to scanpy documentation, logfold change is calculated when t-test methods are used 
 
