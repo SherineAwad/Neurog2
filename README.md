@@ -561,11 +561,13 @@ and
 For more details, see the script [`asSeuratFC.py`](asSeuratFC.py).
 Heatmap is sorted by calculated logfoldchanges 
 
-![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_top_genes_logFC_heatmap.png)
+![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_top10_log2fc_heatmap.png)
 
 and
-[Gene Expression using seurat like method and manual LogFC](https://docs.google.com/spreadsheets/d/1oNayEVGP2TKyatMQhKBFBp2AK6aFu5-L7pMe91y8oEk/edit?usp=sharing)
+[Gene Expression using seurat like method and manual LogFC](https://docs.google.com/spreadsheets/d/18c6DcFS1T5FAHq6P3rnA5H-hMOPkWCtQQuL8gok7Dag/edit?usp=sharing)
 
+
+<!-- 
 ### 🎯🎯 Using t-test method: according to scanpy documentation, logfold change is calculated when t-test methods are used 
 
 ![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top5Genes_all_clusterttest.png )
@@ -661,6 +663,9 @@ and
 
 ![Heatmap Expression](figures/heatmap_annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_Top50Genes_fwlheatmap.png)
 ✅ ✅ [Gene Expressions](https://docs.google.com/spreadsheets/d/1T1vVbhErEv14EHqtV9k93Ec9NrOIDKgY66_rsJdy-ps/edit?usp=sharing)
+
+
+-->
 
 # ✨✨✨ Running PyScenic for transcription factors network 
 
