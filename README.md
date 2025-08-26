@@ -647,8 +647,7 @@ This approach ensures the selection of **high-confidence, biologically relevant 
 ![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_combined_filtering_heatmap.png)
 
 and
-[Gene Expression using seurat like method and manual LogFC](https://docs.google.com/spreadsheets/d/1nOU9ONIMyL_BPybMhdlmtjWBYP4EwW_xnVF5YeyaKyI/edit?usp=sharing)
-
+[Gene Expression using seurat like method and manual LogFC](https://docs.google.com/spreadsheets/d/1iuQ6r_uGNytc3BnNFj4lUE19FfSfc56EplhsW4p6Ygo/edit?usp=sharing)
 
 <!-- 
 ### 🎯🎯 Using t-test method: according to scanpy documentation, logfold change is calculated when t-test methods are used 
