@@ -550,8 +550,7 @@ and a bit more filter:
 
 ![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_NoFC2_heatmap.png)
 and 
-[Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/1ctqTss5ZycqPEFoNHW0rHbTqfIPVrU2i2xbGv_4Gb64/edit?usp=sharing)
-
+[Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/1iuQ6r_uGNytc3BnNFj4lUE19FfSfc56EplhsW4p6Ygo/edit?usp=sharing)
 
 ### Using similar way as Seurat in scanpy to calculate DGE  and calculate logFC manually 
 For more details, see the script [`asSeuratFC.py`](asSeuratFC.py).
