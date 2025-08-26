@@ -525,10 +525,22 @@ sc.tl.rank_genes_groups(
 )
 
 ``` 
+and filter without min_fold_change as follows: 
 
-![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_NoFC_heatmap.png)
+```
+sc.tl.filter_rank_genes_groups(
+    adata,
+    #min_fold_change=0.5,  # Comment as we don't have FC values
+    min_in_group_fraction=0.05,
+    max_out_group_fraction=0.3,
+    key='rank_genes_groups',
+    key_added='filtered_rank_genes_groups'
+)
+```
+
+![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_NoFC2_heatmap.png)
 and 
-[Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/1OukAYuKPQHz5rg58PQeW76k3QDH2SMYOATnfW-4Gyes/edit?usp=sharing)
+[Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/1ctqTss5ZycqPEFoNHW0rHbTqfIPVrU2i2xbGv_4Gb64/edit?usp=sharing)
 
 
 ### Using similar way as Seurat in scanpy to calculate DGE  and calculate logFC manually 

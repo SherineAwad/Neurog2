@@ -20,10 +20,6 @@ newObject = "expression_" + base_name + ".h5ad"
 # READ DATA
 adata = sc.read(myObject)
 groupby_col = "celltype" 
-
-adata = sc.read(myObject)
-groupby_col = "celltype"
-
 # Run Wilcoxon - FIXED: use_raw=False since we're using scaled data
 sc.tl.rank_genes_groups(
     adata,
@@ -33,8 +29,14 @@ sc.tl.rank_genes_groups(
     pts=True,
 )
 
-# REMOVED: No logfoldchanges with Wilcoxon
-# logfcs = adata.uns['rank_genes_groups']['logfoldchanges']  # ← THIS WILL ERROR
+sc.tl.filter_rank_genes_groups(
+    adata,
+    #min_fold_change=0.5,  # Comment as we don't have FC values
+    min_in_group_fraction=0.05,
+    max_out_group_fraction=0.3,
+    key='rank_genes_groups',
+    key_added='filtered_rank_genes_groups'
+)
 
 # MERGE ALL DGE RESULTS INTO ONE CSV
 celltypes = adata.obs[groupby_col].unique()
@@ -88,7 +90,7 @@ all_dge_df['method'] = 'wilcoxon'
 column_order = ['gene', 'cell_type', 'wilcoxon_score', 'p_val_adj', 'mean_diff', 'direction', 'method']
 all_dge_df = all_dge_df[column_order]
 
-all_dge_csv = f"{base_name}_all_DGE_noFCwilcoxon.csv"  # ← CHANGED: Reflects method
+all_dge_csv = f"{base_name}_all_DGE_noFC2wilcoxon.csv"  # ← CHANGED: Reflects method
 all_dge_df.to_csv(all_dge_csv, index=False)
 print(f"Wilcoxon DGE results saved to {all_dge_csv}")
 print(f"Total significant genes: {len(all_dge_df)}")
@@ -144,11 +146,11 @@ plt.title("Top 10 marker genes per cell type (Wilcoxon)", fontsize=16)
 plt.ylabel("Genes")
 plt.xlabel("Cell types")
 plt.tight_layout()
-heatmap_file = f"{base_name}_NoFC_heatmap.png"
+heatmap_file = f"{base_name}_NoFC2_heatmap.png"
 plt.savefig(heatmap_file, dpi=600, bbox_inches='tight')
 plt.close()
 print(f"Heatmap saved to {heatmap_file}")
 
 # Optional: Also save the expression data
-mean_expr_scaled.to_csv(f"{base_name}_NoFC_heatmap_expression_data.csv")
+mean_expr_scaled.to_csv(f"{base_name}_NoFC2_heatmap_expression_data.csv")
 print("Expression data for heatmap saved")
