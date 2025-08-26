@@ -537,7 +537,7 @@ sc.tl.filter_rank_genes_groups(
     key_added='filtered_rank_genes_groups'
 )
 ```
-and a but more filter: 
+and a bit more filter: 
 
 ```
  # FILTERING CRITERIA
