@@ -88,7 +88,7 @@ all_dge_df['method'] = 'wilcoxon'
 column_order = ['gene', 'cell_type', 'wilcoxon_score', 'p_val_adj', 'mean_diff', 'direction', 'method']
 all_dge_df = all_dge_df[column_order]
 
-all_dge_csv = f"{base_name}_all_DGE_wilcoxon.csv"  # ← CHANGED: Reflects method
+all_dge_csv = f"{base_name}_all_DGE_noFCwilcoxon.csv"  # ← CHANGED: Reflects method
 all_dge_df.to_csv(all_dge_csv, index=False)
 print(f"Wilcoxon DGE results saved to {all_dge_csv}")
 print(f"Total significant genes: {len(all_dge_df)}")
@@ -144,11 +144,11 @@ plt.title("Top 10 marker genes per cell type (Wilcoxon)", fontsize=16)
 plt.ylabel("Genes")
 plt.xlabel("Cell types")
 plt.tight_layout()
-heatmap_file = f"{base_name}_top10_genes_heatmap.png"
+heatmap_file = f"{base_name}_NoFC_heatmap.png"
 plt.savefig(heatmap_file, dpi=600, bbox_inches='tight')
 plt.close()
 print(f"Heatmap saved to {heatmap_file}")
 
 # Optional: Also save the expression data
-mean_expr_scaled.to_csv(f"{base_name}_heatmap_expression_data.csv")
+mean_expr_scaled.to_csv(f"{base_name}_NoFC_heatmap_expression_data.csv")
 print("Expression data for heatmap saved")

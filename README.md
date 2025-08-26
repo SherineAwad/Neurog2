@@ -526,19 +526,20 @@ sc.tl.rank_genes_groups(
 
 ``` 
 
-![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_top10_genes_heatmap.png)
+![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_NoFC_heatmap.png)
 and 
-[Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/1_yIJHexagioShCgxqBY5NAwWuErrsVUR7U-yIwGyDvE/edit?usp=sharing)
+[Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/1OukAYuKPQHz5rg58PQeW76k3QDH2SMYOATnfW-4Gyes/edit?usp=sharing)
+
 
 ### Using similar way as Seurat in scanpy to calculate DGE  and calculate logFC manually 
 
 For more details, see the script [`asSeuratFC.py`](asSeuratFC.py).
 Heatmap is sorted by calculated logfoldchanges 
 
-![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_top_genes_log2fc.png)
+![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_log2fc_heatmap.png)
 
 and
-[Gene Expression using seurat like method and manual LogFC](https://docs.google.com/spreadsheets/d/18c6DcFS1T5FAHq6P3rnA5H-hMOPkWCtQQuL8gok7Dag/edit?usp=sharing)
+[Gene Expression using seurat like method and manual LogFC](https://docs.google.com/spreadsheets/d/1v8TkBBpA9lzulQpakeHgbmn0DkT5Az3hgJ7jBaG0JH8/edit?usp=sharing)
 
 
 <!-- 

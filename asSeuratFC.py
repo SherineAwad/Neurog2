@@ -167,7 +167,7 @@ if all_dge_list:
     all_dge_df = all_dge_df[column_order]
     
     # Save the results
-    all_dge_csv = f"{base_name}_all_DGE_wilcoxon.csv"
+    all_dge_csv = f"{base_name}_all_DGE_logFC_wilcoxon.csv"
     all_dge_df.to_csv(all_dge_csv, index=False)
     print(f"\n=== FINAL RESULTS ===")
     print(f"Saved DGE results to {all_dge_csv}")
@@ -243,7 +243,7 @@ if not all_dge_df.empty and top_genes_dict:
             plt.ylabel("Genes", fontsize=12)
             plt.xlabel("Cell Types", fontsize=12)
             plt.tight_layout()
-            heatmap_file = f"{base_name}_top10_log2fc_heatmap.png"
+            heatmap_file = f"{base_name}_log2fc_heatmap.png"
             plt.savefig(heatmap_file, dpi=300, bbox_inches='tight')
             plt.close()
             print(f"log2FC heatmap saved to {heatmap_file}")
@@ -265,7 +265,7 @@ if not all_dge_df.empty and top_genes_dict:
                 plt.ylabel("Genes", fontsize=12)
                 plt.xlabel("Cell Types", fontsize=12)
                 plt.tight_layout()
-                heatmap_file_no_labels = f"{base_name}_top10_log2fc_heatmap_no_labels.png"
+                heatmap_file_no_labels = f"{base_name}_log2fc_heatmap_no_labels.png"
                 plt.savefig(heatmap_file_no_labels, dpi=300, bbox_inches='tight')
                 plt.close()
                 print(f"log2FC heatmap (no gene labels) saved to {heatmap_file_no_labels}")
