@@ -555,8 +555,96 @@ and
 
 ### Using similar way as Seurat in scanpy to calculate DGE  and calculate logFC manually 
 For more details, see the script [`asSeuratFC.py`](asSeuratFC.py).
-and using combined filtering 
+and using combined filtering as follows: 
 
+# Top 10 genes per cell type
+top_genes = df_filtered.sort_values('combined_score', ascending=False).head(10)
+
+# Combined Filtering Strategy for Differential Gene Expression Analysis
+
+## 🎯 Overview
+A hybrid approach that combines **statistical significance** and **biological effect size** to identify the most meaningful differentially expressed genes.
+
+## 📊 Filtering Criteria
+
+### Primary Requirements (All Must Pass)
+- **Statistical Significance**: `p_val_adj < 0.05` (FDR-corrected p-value)
+- **Minimum Effect Size**: `|log2FC| > 1.0` (2-fold expression change)
+
+### Secondary Scoring System
+```python
+combined_score = (|wilcoxon_score| × 0.5) + (|log2FC| × 0.5)
+```
+
+## 🔢 Weighting Scheme
+| Component | Weight | Purpose |
+|-----------|--------|---------|
+| **Wilcoxon Score** | 50% | Statistical confidence |
+| **log2 Fold Change** | 50% | Biological effect size |
+
+## 🎪 Three Filtering Approaches
+
+### Option 1: Strict Intersection
+```python
+genes = (p_val_adj < 0.05) & (|wilcoxon| > 2.0) & (|log2FC| > 1.0)
+```
+- **Most conservative**
+- Genes must meet ALL criteria
+- Highest confidence, but may miss some relevant genes
+
+### Option 2: Weighted Combined Score
+```python
+combined_score = (|wilcoxon| × 0.5) + (|log2FC| × 0.5)
+```
+- **Balanced approach**
+- Ranks genes by combined statistical + biological relevance
+- Flexible prioritization
+
+### Option 3: Union Approach (Primary Method)
+```python
+genes = (p_val_adj < 0.05) & [(|log2FC| > 1.0) OR (|wilcoxon| > 2.0)]
+```
+- **Most comprehensive**
+- Captures genes with either strong statistical support OR large effect size
+- Includes the broadest set of potentially relevant genes
+
+## 🏆 Final Gene Selection
+```python
+# Top 10 genes per cell type
+top_genes = df_filtered.sort_values('combined_score', ascending=False).head(10)
+```
+
+## 📈 Benefits of Combined Filtering
+
+### ✅ Statistical Rigor
+- Controls for false discoveries (p-value adjustment)
+- Non-parametric test robust to outliers
+
+### ✅ Biological Relevance
+- Ensures meaningful effect sizes (minimum 2-fold change)
+- Precludes statistically significant but biologically trivial differences
+
+### ✅ Balanced Prioritization
+- Avoids over-emphasizing either statistical or biological metrics alone
+- Selects genes that are both reliable and meaningful
+
+## 🎨 Heatmap Visualization
+**Data Representation**: log2 Fold Change values
+
+- **Rows**: Top genes selected by combined scoring
+- **Columns**: Cell types
+- **Colors**: 
+  - 🔴 Red: Up-regulated (log2FC > 0)
+  - 🔵 Blue: Down-regulated (log2FC < 0)
+  - Color intensity: Effect magnitude
+
+## 📋 Output Metrics
+- Total differentially expressed genes
+- Up vs. down-regulated counts
+- Overlap between statistical and effect size criteria
+- Distribution statistics for both metrics
+
+This approach ensures the selection of **high-confidence, biologically relevant marker genes** that are suitable for both mechanistic insights and practical applications like cell type identification.
 ![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_combined_filtering_heatmap.png)
 
 and
