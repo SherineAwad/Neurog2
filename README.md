@@ -526,8 +526,7 @@ sc.tl.rank_genes_groups(
 
 ``` 
 
-![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_top10_genes_heatmap.png)
-
+![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_top_genes_log2fc.png)
 and 
 [Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/1_yIJHexagioShCgxqBY5NAwWuErrsVUR7U-yIwGyDvE/edit?usp=sharing)
 
