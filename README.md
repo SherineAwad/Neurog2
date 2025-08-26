@@ -535,7 +535,7 @@ and
 For more details, see the script [`asSeuratFC.py`](asSeuratFC.py).
 Heatmap is sorted by calculated logfoldchanges 
 
-![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_top10_log2fc_heatmap.png)
+![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_top_genes_log2fc.png)
 
 and
 [Gene Expression using seurat like method and manual LogFC](https://docs.google.com/spreadsheets/d/18c6DcFS1T5FAHq6P3rnA5H-hMOPkWCtQQuL8gok7Dag/edit?usp=sharing)
