@@ -552,32 +552,30 @@ and a bit more filter:
 and 
 [Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/1iuQ6r_uGNytc3BnNFj4lUE19FfSfc56EplhsW4p6Ygo/edit?usp=sharing)
 
-### Using similar way as Seurat in scanpy to calculate DGE  and calculate logFC manually 
+## Using similar way as Seurat in scanpy to calculate DGE  and calculate logFC manually 
 For more details, see the script [`asSeuratFC.py`](asSeuratFC.py).
 and using combined filtering as follows: 
 
-# Top 10 genes per cell type
-top_genes = df_filtered.sort_values('combined_score', ascending=False).head(10)
 
-# Combined Filtering Strategy for Differential Gene Expression Analysis
+#### Combined Filtering Strategy for Differential Gene Expression Analysis
 
-# Filtering Steps
+##### Filtering Steps
 
-## 1. Initial Filter
+1. Initial Filter
 - `p_val_adj < 0.05` (statistical significance)
 
-## 2. Union Filter (EITHER/OR)
+2. Union Filter (EITHER/OR)
 - `|log2FC| > 1.0` (biological effect) **OR**
 - `|wilcoxon_score| > 2.0` (statistical confidence)
 
-## 3. Ranking
+3. Ranking
 - `combined_score = (|wilcoxon| × 0.5) + (|log2FC| × 0.5)`
 - Sort by `combined_score` descending
 
-## 4. Selection
+4. Selection
 - Top 10 genes per cell type
 
-## 5. Visualization
+5. Visualization
 - Heatmap shows **original signed log2FC values**
 - Red: positive values (up-regulated)
 - Blue: negative values (down-regulated)
