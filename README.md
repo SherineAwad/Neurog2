@@ -554,14 +554,13 @@ and
 
 
 ### Using similar way as Seurat in scanpy to calculate DGE  and calculate logFC manually 
-
 For more details, see the script [`asSeuratFC.py`](asSeuratFC.py).
-Heatmap is sorted by calculated logfoldchanges 
+and using combined filtering 
 
-![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_log2fc_heatmap.png)
+![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_combined_filtering_heatmap.png)
 
 and
-[Gene Expression using seurat like method and manual LogFC](https://docs.google.com/spreadsheets/d/1v8TkBBpA9lzulQpakeHgbmn0DkT5Az3hgJ7jBaG0JH8/edit?usp=sharing)
+[Gene Expression using seurat like method and manual LogFC](https://docs.google.com/spreadsheets/d/1nOU9ONIMyL_BPybMhdlmtjWBYP4EwW_xnVF5YeyaKyI/edit?usp=sharing)
 
 
 <!-- 
