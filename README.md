@@ -537,6 +537,16 @@ sc.tl.filter_rank_genes_groups(
     key_added='filtered_rank_genes_groups'
 )
 ```
+and a but more filter: 
+
+```
+ # FILTERING CRITERIA
+    df_filtered = df[
+        (df['p_val_adj'] < 0.05) &
+        (df['wilcoxon_score'].abs() > 2.0)
+    ].copy()
+
+```
 
 ![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_NoFC2_heatmap.png)
 and 
