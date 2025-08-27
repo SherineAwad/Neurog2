@@ -511,10 +511,10 @@ adata = adata[
 | control_2mo         | 8,818      |
 
 
-#### Gene Expression Analysis 
+## Gene Expression Analysis 
 
 
-### Using similar way as Seurat in scanpy to calculate DGE 
+#### Using similar way as Seurat in scanpy to calculate DGE 
 
 The following code performs differential expression analysis per cell type (or cluster) in `adata`, emulating Seurat's `FindMarkers` function.
 The heatmap is sorted by the z-score of the expression values. 
@@ -559,7 +559,7 @@ and a bit more filter:
 #### Using min_in_group_fraction =0.1 (10%)
 ![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_NoFC_diagonal_heatmap_0.1.png)
 and 
-[Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/10P48-a-pVRz3vSKLXvlQFB-wQU3yykfAbTvug_Rqs9U/edit?usp=sharing)
+[Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/1FGVjMmInl6joGL41AAGa-jkrSU01k3FT6_9djwCJQ34/edit?usp=sharing)
 
 #### Using min_in_group_fraction =0.25 (25%)
 ![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_NoFC_diagonal_heatmap_0.25.png)
