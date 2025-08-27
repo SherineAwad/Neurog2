@@ -32,6 +32,7 @@ sc.tl.rank_genes_groups(
 sc.tl.filter_rank_genes_groups(
     adata,
     min_in_group_fraction=0.1,
+    max_out_group_fraction=1.0,
     key='rank_genes_groups',
     key_added='filtered_rank_genes_groups'
 )
