@@ -31,9 +31,7 @@ sc.tl.rank_genes_groups(
 
 sc.tl.filter_rank_genes_groups(
     adata,
-    #min_fold_change=0.5,  # Comment as we don't have FC values
-    min_in_group_fraction=0.05,
-    max_out_group_fraction=0.3,
+    min_in_group_fraction=0.1,
     key='rank_genes_groups',
     key_added='filtered_rank_genes_groups'
 )
@@ -72,7 +70,7 @@ for ct in celltypes:
     other_mean = np.array(adata.X[other_mask].mean(axis=0)).flatten()
 
     # Add mean differences (NOT log2FC) - FIXED: Honest naming
-    df_filtered['mean_diff'] = group_mean[df_filtered.index] - other_mean[df_filtered.index]
+    df_filtered['mean_diff'] = group_mean[df_filtered.index] - other_mean[df_filtered.index]  # FIXED
     df_filtered['direction'] = df_filtered['mean_diff'].apply(lambda x: 'up' if x > 0 else 'down')
 
     all_dge_list.append(df_filtered)
@@ -90,10 +88,11 @@ all_dge_df['method'] = 'wilcoxon'
 column_order = ['gene', 'cell_type', 'wilcoxon_score', 'p_val_adj', 'mean_diff', 'direction', 'method']
 all_dge_df = all_dge_df[column_order]
 
-all_dge_csv = f"{base_name}_all_DGE_noFC2wilcoxon.csv"  # ← CHANGED: Reflects method
+all_dge_csv = f"{base_name}_all_DGE_noFCwilcoxon.csv"  # ← CHANGED: Reflects method
 all_dge_df.to_csv(all_dge_csv, index=False)
 print(f"Wilcoxon DGE results saved to {all_dge_csv}")
 print(f"Total significant genes: {len(all_dge_df)}")
+
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -108,14 +107,13 @@ for genes in top_genes_dict.values():
     top_genes_all.extend(genes)
 top_genes_all = list(dict.fromkeys(top_genes_all))  # remove duplicates
 
-# Subset adata to top genes - FIXED: Use the main adata object (scaled data)
+# Subset adata to top genes
 adata_top = adata[:, top_genes_all]
 
 # Create a matrix of mean expression per cell type from SCALED data
 mean_expr = pd.DataFrame(index=top_genes_all)
 for ct in celltype_order:
-    if ct in adata.obs[groupby_col].unique():  # only include existing cell types
-        # Get cells of this type and calculate mean expression
+    if ct in adata.obs[groupby_col].unique():
         ct_mask = adata_top.obs[groupby_col] == ct
         if hasattr(adata_top.X, 'toarray'):
             ct_data = adata_top.X[ct_mask].toarray()
@@ -123,7 +121,7 @@ for ct in celltype_order:
             ct_data = adata_top.X[ct_mask]
         mean_expr[ct] = ct_data.mean(axis=0)
 
-# Scale for visualization (z-score per gene) - FIXED: Proper scaling
+# Scale for visualization (z-score per gene)
 mean_expr_scaled = mean_expr.copy()
 for gene in mean_expr.index:
     gene_values = mean_expr.loc[gene]
@@ -132,25 +130,45 @@ for gene in mean_expr.index:
 # Reorder columns to match desired order
 mean_expr_scaled = mean_expr_scaled[celltype_order]
 
-# Plot heatmap
+# SORT GENES TO FORM DIAGONAL PATTERN
+# For each gene, find which cell type has the highest expression
+gene_max_celltype = mean_expr_scaled.idxmax(axis=1)
+
+# Create a list to store sorted genes
+sorted_genes = []
+
+# For each cell type in order, get genes that have max expression in that cell type
+for ct in celltype_order:
+    genes_in_celltype = gene_max_celltype[gene_max_celltype == ct].index.tolist()
+    # Sort these genes by their expression in this cell type (descending)
+    genes_sorted = mean_expr_scaled.loc[genes_in_celltype, ct].sort_values(ascending=False).index.tolist()
+    sorted_genes.extend(genes_sorted)
+
+# Reorder the dataframe with sorted genes
+mean_expr_scaled_sorted = mean_expr_scaled.loc[sorted_genes]
+
+# Plot heatmap with diagonal pattern
 plt.figure(figsize=(12, 10))
 sns.heatmap(
-    mean_expr_scaled, 
-    cmap='vlag', 
-    yticklabels=True, 
+    mean_expr_scaled_sorted,
+    cmap='vlag',
+    yticklabels=True,
     xticklabels=True,
     cbar_kws={'label': 'Z-score of mean expression'},
-    center=0  # Center colormap at 0 for scaled data
+    center=0
 )
-plt.title("Top 10 marker genes per cell type (Wilcoxon)", fontsize=16)
+plt.title("Top marker genes per cell type - Sorted for Diagonal Pattern", fontsize=16)
 plt.ylabel("Genes")
 plt.xlabel("Cell types")
 plt.tight_layout()
-heatmap_file = f"{base_name}_NoFC2_heatmap.png"
+heatmap_file = f"{base_name}_NoFC_diagonal_heatmap.png"
 plt.savefig(heatmap_file, dpi=600, bbox_inches='tight')
 plt.close()
-print(f"Heatmap saved to {heatmap_file}")
+print(f"Diagonal heatmap saved to {heatmap_file}")
 
-# Optional: Also save the expression data
-mean_expr_scaled.to_csv(f"{base_name}_NoFC2_heatmap_expression_data.csv")
-print("Expression data for heatmap saved")
+# Optional: Also save the sorted expression data
+mean_expr_scaled_sorted.to_csv(f"{base_name}_NoFC_diagonal_heatmap_expression_data.csv")
+print("Sorted expression data for diagonal heatmap saved")
+
+
+
