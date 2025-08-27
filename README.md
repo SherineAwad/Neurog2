@@ -556,12 +556,15 @@ and a bit more filter:
     ].copy()
 
 ```
-
-![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_NoFC_diagonal_heatmap.png)
+#### Using min_in_group_fraction =0.1 (10%)
+![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_NoFC_diagonal_heatmap_0.1.png)
 and 
 [Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/10P48-a-pVRz3vSKLXvlQFB-wQU3yykfAbTvug_Rqs9U/edit?usp=sharing)
 
-
+#### Using min_in_group_fraction =0.25 (25%)
+![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_NoFC_diagonal_heatmap_0.25.png)
+and
+[Gene Expression using seurat like method](https://docs.google.com/spreadsheets/d/11Twk1tY0T0TdnU4mAbBmV2qbEeupX6tKqzVSM6pFHb0/edit?usp=sharing)
 
 ## How to run Snakemake 
 
