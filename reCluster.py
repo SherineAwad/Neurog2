@@ -52,10 +52,10 @@ print("Remaining cluster IDs:", remaining_clusters)
 
 
 ## Filter genes with zero counts in all cells
-sc.pp.filter_genes(adata, min_cells=1)
+#sc.pp.filter_genes(adata, min_cells=1)
 
 ## Scale
-sc.pp.scale(adata)
+#sc.pp.scale(adata)
 
 # Recompute PCA on filtered data
 sc.tl.pca(adata) #, svd_solver='arpack')
@@ -67,11 +67,16 @@ resol = 2.0
 # Reclustering
 sc.tl.leiden(adata,flavor="igraph", n_iterations=2,  resolution=resol)
 
-sc.pl.umap(adata, color=["leiden"], save=f"_reClustered_{base_name}_{resol}res.png", legend_loc="on data")
+figurename1 = f"figures/reClustered_{base_name}_{resol}res.png"
+fig = sc.pl.umap(adata, color=["leiden"], save=figurename1, legend_loc="on data",show = False, return_fig=True)
+plt.savefig(figurename1, dpi=600, bbox_inches="tight")
+plt.close()
 
 marker_genes = [line.strip() for line in open(markers)]
 
+
 # Save individual plots for each gene
+
 for gene in marker_genes:
     if gene in adata.var_names:
         sc.pl.scatter(
@@ -79,8 +84,13 @@ for gene in marker_genes:
             color=gene,
             title=gene,
             basis='umap',
-            save=f"_reClustered_{base_name}_{gene}.png"
+            show=False, size=30, 
         )
+        fig = plt.gcf()           # get current figure
+        fig.set_size_inches(10, 10)  # set figure size
+        fig.savefig(f"figures/reClustered_{base_name}_{gene}.png", dpi=600, bbox_inches="tight")
+        plt.close(fig)            # close figure
+
 
 marker_genes  = {
     "MG": ["Rlbp1","Gfap","Apoe","Notch1","Pax6","Slc1a3","Vim"],
@@ -93,7 +103,17 @@ marker_genes  = {
     "Microglia": ["Ptprc","Csf2rb","Sall1"],
     "Astrocytes":["Pax2","Igf2", "Gfap"]
     }
-sc.pl.dotplot(adata, marker_genes, groupby="leiden", standard_scale="var", save=f"_reClustered_{base_name}_markerGenes.png")
+figurename2 = f"figures/reClustered_{base_name}_markerGenes.png"
+fig = sc.pl.dotplot(adata, marker_genes, groupby="leiden", standard_scale="var", show= False, return_fig=True)
+plt.savefig(figurename2, dpi=600, bbox_inches="tight")
+plt.close()
+
+##Some checking 
+# After all processing, check:
+print(f"adata shape: {adata.shape}")  # Should be filtered
+print(f"adata.raw shape: {adata.raw.shape}")  # Should be original shape
+print(f"adata.X min/max: {adata.X.min():.2f}, {adata.X.max():.2f}")  # Should be scaled (~-10 to 10)
+print(f"adata.raw.X min/max: {adata.raw.X.min():.2f}, {adata.raw.X.max():.2f}")  # Should be positive
 
 adata.obs_names_make_unique()
 adata.write(newObject, compression="gzip")

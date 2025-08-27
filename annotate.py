@@ -3,6 +3,7 @@ import os
 import sys
 import scanpy as sc
 import importlib_metadata
+import matplotlib.pyplot as plt
 
 # Argument parsing
 parser = argparse.ArgumentParser(description="Remove specific clusters and re-cluster")
@@ -53,11 +54,16 @@ adata.uns["celltype_colors"] = [celltype_colors.get(ct, "#000000") for ct in cel
 adata.obs_names_make_unique()
 
 # Generate plots
-figure_name = base_name + "_annotationsON.png"
-sc.pl.umap(adata, color='celltype', legend_loc="on data", save=figure_name)
+figure_name = "figures/"+ base_name + "_annotationsON.png"
+fig = sc.pl.umap(adata, color='celltype', legend_loc="on data", show=False,return_fig=True)
+fig.savefig(figure_name, dpi=600, bbox_inches="tight")
+plt.close(fig)
 
-figure_name = base_name + "_annotations.png"
-sc.pl.umap(adata, color='celltype', save=figure_name)
+figure_name = "figures/" +base_name + "_annotations.png"
+fig = sc.pl.umap(adata, color='celltype',show=False,return_fig=True)
+figsize=(10,10) 
+fig.savefig(figure_name, dpi=600,bbox_inches="tight")
+plt.close(fig) 
 
 import pandas as pd
 

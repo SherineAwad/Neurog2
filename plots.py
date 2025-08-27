@@ -22,17 +22,20 @@ print(adata.obs.head())
 # UMAP plots for each sample
 samples = adata.obs['sample'].unique()
 for sample in samples:
-    sc.pl.umap(
+    ufig = sc.pl.umap(
         adata[adata.obs['sample'] == sample],
         color='sample',
         title=f"Sample: {sample}",
         size=5,
-        save=f"_reclustered_{sample}.png",
-        show=False
+        show=False, return_fig=True
     )
-
+    ufig.savefig(f"figures/reclustered_{sample}.png", dpi=600,bbox_inches="tight")
+    plt.close(ufig) 
 # UMAP colored by sample
-sc.pl.umap(adata, color='sample', size=5, save=f"reclustered_{base_name}.png")
+
+fig = sc.pl.umap(adata, color='sample', size=5, show=False,return_fig=True)
+fig.savefig(f"figures/reclustered_{base_name}.png", dpi=600,bbox_inches="tight")
+#plt.close(fig) 
 
 celltype_colors = {
     'Cones': '#e31a1c',       # Red
@@ -90,7 +93,7 @@ plt.legend(title='Cell Type', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 
 # Save figure
-plt.savefig("figures/Reversed_stacked_bar_sample_by_celltype.png", dpi=300)
+plt.savefig("figures/Reversed_stacked_bar_sample_by_celltype.png", dpi=600,bbox_inches="tight")
 plt.close()
 
 
@@ -121,16 +124,17 @@ markergenes = [
     'Elavl3', 'Gad2', 'Chat', 'Nrl', 'Rho', 'Arr3', 'Gnat2'
 ]
 
-sc.pl.dotplot(
+figure_name = f"figures/dotplot_{base_name}_markerGenes.png"
+fig = sc.pl.dotplot(
     adata,
     markergenes,
     groupby="celltype",
     categories_order = celltype_order,
     standard_scale="var",
     figsize=(6,5),
-    dot_max=1.0, show=False, dendrogram=False, save= f"_{base_name}_markerGenes.png") 
-
-
-
+    dot_max=1.0, dendrogram=False, show =False,return_fig=True)
+    
+fig.savefig(figure_name, dpi=600,bbox_inches="tight")
+#plt.close(fig) 
 
 

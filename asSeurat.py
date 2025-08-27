@@ -11,12 +11,15 @@ import seaborn as sns
 # Fix importlib.metadata for older Python environments
 sys.modules['importlib.metadata'] = importlib_metadata
 # ARGUMENTS
-parser = argparse.ArgumentParser(description="Perform DGE and plot top genes heatmap")
+parser = argparse.ArgumentParser() 
 parser.add_argument('myObject', help='Path to input AnnData (.h5ad) file')
+parser.add_argument('min_in', type=float, default=0.1) 
 args = parser.parse_args()
 myObject = args.myObject
 base_name = os.path.splitext(os.path.basename(myObject))[0]
 newObject = "expression_" + base_name + ".h5ad"
+min_in = args.min_in
+
 # READ DATA
 adata = sc.read(myObject)
 groupby_col = "celltype" 
@@ -28,10 +31,10 @@ sc.tl.rank_genes_groups(
     use_raw=False,  # ← CHANGED: Use scaled data for Wilcoxon
     pts=True,
 )
-
+ 
 sc.tl.filter_rank_genes_groups(
     adata,
-    min_in_group_fraction=0.1,
+    min_in_group_fraction=min_in,
     max_out_group_fraction=1.0,
     key='rank_genes_groups',
     key_added='filtered_rank_genes_groups'
@@ -89,7 +92,7 @@ all_dge_df['method'] = 'wilcoxon'
 column_order = ['gene', 'cell_type', 'wilcoxon_score', 'p_val_adj', 'mean_diff', 'direction', 'method']
 all_dge_df = all_dge_df[column_order]
 
-all_dge_csv = f"{base_name}_all_DGE_noFCwilcoxon.csv"  # ← CHANGED: Reflects method
+all_dge_csv = f"{base_name}_all_DGE_noFCwilcoxon_{min_in}.csv"  # ← CHANGED: Reflects method
 all_dge_df.to_csv(all_dge_csv, index=False)
 print(f"Wilcoxon DGE results saved to {all_dge_csv}")
 print(f"Total significant genes: {len(all_dge_df)}")
@@ -158,18 +161,15 @@ sns.heatmap(
     cbar_kws={'label': 'Z-score of mean expression'},
     center=0
 )
-plt.title("Top marker genes per cell type - Sorted for Diagonal Pattern", fontsize=16)
+plt.title("Top marker genes per cell type", fontsize=16)
 plt.ylabel("Genes")
 plt.xlabel("Cell types")
 plt.tight_layout()
-heatmap_file = f"{base_name}_NoFC_diagonal_heatmap.png"
+heatmap_file = f"{base_name}_NoFC_diagonal_heatmap_{min_in}.png"
 plt.savefig(heatmap_file, dpi=600, bbox_inches='tight')
 plt.close()
 print(f"Diagonal heatmap saved to {heatmap_file}")
 
-# Optional: Also save the sorted expression data
-mean_expr_scaled_sorted.to_csv(f"{base_name}_NoFC_diagonal_heatmap_expression_data.csv")
-print("Sorted expression data for diagonal heatmap saved")
 
 
 

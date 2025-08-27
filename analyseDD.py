@@ -21,6 +21,8 @@ adata = sc.read(myObject)
 sc.pp.normalize_total(adata, target_sum=1e4)
 sc.pp.log1p(adata)
 
+adata.raw = adata.copy() 
+
 # Identify highly variable genes
 sc.pp.highly_variable_genes(adata, flavor='seurat', n_top_genes=2000)
 
