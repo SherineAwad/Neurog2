@@ -116,8 +116,7 @@ for ct in celltypes:
 
             # Calculate log2FC
             pseudocount = 1e-5
-            log2fc = np.log2((group_mean + pseudocount) / (other_mean + pseudocount))
-
+            log2fc = np.log2((other_mean + pseudocount) / (group_mean + pseudocount))
             log2fcs[i] = log2fc
             directions[i] = 'up' if log2fc > 0 else 'down'
 

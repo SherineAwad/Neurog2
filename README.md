@@ -587,7 +587,7 @@ Captures both statistically significant and biologically relevant genes through 
 ![seuratlikedge](annotated_reclustered_refined_doubletsRemoved_threshold0.8_neurog2_combined_filtering_heatmap.png)
 
 and
-[Gene Expression using seurat like method and manual LogFC](https://docs.google.com/spreadsheets/d/1iuQ6r_uGNytc3BnNFj4lUE19FfSfc56EplhsW4p6Ygo/edit?usp=sharing)
+[Gene Expression using seurat like method and manual LogFC](https://docs.google.com/spreadsheets/d/1PCo0ZQvIwNeg2J0o9JNla-evqlhPd67RVCTgWvcmhGo/edit?usp=sharing)
 
 <!-- 
 ### 🎯🎯 Using t-test method: according to scanpy documentation, logfold change is calculated when t-test methods are used 
