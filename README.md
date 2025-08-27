@@ -785,6 +785,53 @@ Usually **GRNBoost2** (gradient boosting trees) or **GENIE3** (random forests) �
 
 ### Working on step 2 and 3 and visualising the network 
 
+### 🔍 Step 2:  Motif Enrichment Pruning
+
+# pySCENIC Output Explanation
+
+This is an example of the **SCENIC / pySCENIC** output table.  
+It contains information about transcription factors (TFs), their motifs, and predicted target genes.
+
+---
+
+## 🔹 Column meanings
+
+| Column | Meaning |
+|--------|---------|
+| **TF** | The transcription factor predicted to regulate genes. |
+| **MotifID** | The DNA-binding motif matched to the TF. |
+| **AUC** | Area Under the Curve for regulon activity across cells (higher = more specific activity). |
+| **NES** | Normalized Enrichment Score (strength of enrichment, like GSEA). |
+| **MotifSimilarityQvalue** | Statistical confidence in motif-TF match (0 = very good). |
+| **OrthologousIdentity** | How well the motif is conserved across species (1.0 = perfect). |
+| **Annotation** | Notes about annotation (e.g. "gene is directly annotated"). |
+| **Context** | Metadata about how enrichment was computed (e.g. ranking file, threshold, activating/repressing). |
+| **TargetGenes** | Predicted target genes with weights (importance scores). |
+| **RankAtMax** | The position in the ranking where maximum enrichment was observed. |
+
+---
+
+## 🔹 Example Row: Glis3 regulon
+
+| TF    | MotifID              | AUC    | NES  | MotifSimilarityQvalue | OrthologousIdentity | Annotation                | Context                                                                                      | TargetGenes (top few shown)                                                                 | RankAtMax |
+|-------|----------------------|--------|------|------------------------|---------------------|---------------------------|----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|-----------|
+| Glis3 | transfac_pro__M07292 | 0.1047 | 3.07 | 0.0                    | 1.0                 | gene is directly annotated | frozenset({'weight>75.0%', 'mm10_10kbp_up_10kbp_down_full_tx_v10_clust.genes_vs_motifs.rankings', 'activating'}) | Cdk17 (0.62), Dtna (2.83), Cdk6 (0.79), Pcdh11x (1.94), N4bp2 (1.23), ... (many more) | 2075      |
+
+---
+
+## 🔹 How to interpret
+
+- **Glis3** is predicted as an active regulator in this dataset.  
+- Strong enrichment (**NES = 3.07**).  
+- Motif-TF match is highly confident (**Qvalue = 0**, **Identity = 1**).  
+- Predicted target genes include *Cdk6, Tox, Map3k5, Pard3b, Rgs6* and many more.  
+- Each target gene has a weight (higher = stronger evidence).  
+
+---
+
+
+
+
 ## How to run Snakemake 
 
 For dry run to check everything before actual run:
