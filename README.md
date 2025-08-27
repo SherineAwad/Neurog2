@@ -500,6 +500,16 @@ adata = adata[
 
 ![CellRatio Reversed](figures/Reversed_stacked_bar_sample_by_celltype.png)
 
+## Cell counts per sample 
+
+### Cell Counts per Sample
+
+| Sample              | Cell Count |
+|---------------------|------------|
+| Neurog2_9SA_5weeks  | 20,691     |
+| Neurog2_9SA_2mo     | 10,255     |
+| control_2mo         | 8,818      |
+
 
 #### Gene Expression Analysis 
 
