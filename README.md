@@ -474,8 +474,7 @@ adata = adata[
 <img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Gli1.png" alt="Gli1" width="33%"><img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Pcp4.png" alt="Pcp4" width="33%"><img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Trpm1.png" alt="Trpm1" width="33%">
 <img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Glul.png" alt="Glul" width="33%"><img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Pdgfra.png" alt="Pdgfra" width="33%"><img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Vim.png" alt="Vim" width="33%">
 <img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Gnat2.png" alt="Gnat2" width="33%"><img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Pecam1.png" alt="Pecam1" width="33%"><img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Vsx1.png" alt="Vsx1" width="33%">
-<img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Grm6.png" alt="Grm6" width="33%"><img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Vsx2.png" alt="Vsx2" width="33%">
-
+<img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Grm6.png" alt="Grm6" width="33%"><img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Vsx2.png" alt="Vsx2" width="33%"><img src="figures/reClustered_refined_doubletsRemoved_threshold0.8_neurog2_Slc18a3.png" alt="Slc18a3" width="33%"> 
 
 ### Dot plot for major celltypes and marker genes 
 
