@@ -108,13 +108,6 @@ fig = sc.pl.dotplot(adata, marker_genes, groupby="leiden", standard_scale="var",
 plt.savefig(figurename2, dpi=600, bbox_inches="tight")
 plt.close()
 
-##Some checking 
-# After all processing, check:
-print(f"adata shape: {adata.shape}")  # Should be filtered
-print(f"adata.raw shape: {adata.raw.shape}")  # Should be original shape
-print(f"adata.X min/max: {adata.X.min():.2f}, {adata.X.max():.2f}")  # Should be scaled (~-10 to 10)
-print(f"adata.raw.X min/max: {adata.raw.X.min():.2f}, {adata.raw.X.max():.2f}")  # Should be positive
-
 adata.obs_names_make_unique()
 adata.write(newObject, compression="gzip")
 
